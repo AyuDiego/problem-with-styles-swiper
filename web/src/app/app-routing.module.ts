@@ -5,15 +5,20 @@ import { AboutModule } from './modules/about/about.module';
 const routes: Routes = [
   {
     path: 'about',
-    loadChildren: async (): Promise<typeof AboutModule> =>
-      (await import('./modules/about/about.module')).AboutModule
-  }
+    loadChildren: () =>
+      import('./modules/about/about.module').then((m) => m.AboutModule)
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
   // work y contact
 ];
 
-
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

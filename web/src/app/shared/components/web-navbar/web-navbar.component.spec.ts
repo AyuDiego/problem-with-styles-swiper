@@ -10,7 +10,7 @@ import { SplitButtonModule } from 'primeng/splitbutton';
  
 import { NavBarComponent } from './web-navbar.component';
 
-const basePath = 'https://pg-application-dev.dhv.mev.atos.net';
+
 
 describe('NavBarComponent', () => {
   let component: NavBarComponent;

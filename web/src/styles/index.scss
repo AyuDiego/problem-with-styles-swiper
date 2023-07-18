@@ -1,9 +1,30 @@
-// // Global styles
-// @import "libs/shared/theme/src/assets/styles";
+/*
+ *  Document   : index.css
+ *  Description: This is a main index scss file for import all scss files.
+ *
+ *  Structure (with shortCodes):
+                 [1. Common ]
+                 [2. Fonts ]
+                 [3. Components ]
+                 [4. Apps]
+                 [5. Pages ]
+                 [6. Plugins ]
+                 [7. UI ]
+                 [8. Browser ]
 
-// // Project styles
+
+/*                 [1. Common ]                   			*/
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap";
+// @import "variables";
+
+/*                 [2. Fonts ]                   			*/
+// @import "fonts";
+
+/*                 [3. Components Custom Styles ]                   */
 // @import "base";
 // @import "blocks";
+// @import "core";
 @import "primeng";
-// @import "primeflex/primeflex.css";
 
