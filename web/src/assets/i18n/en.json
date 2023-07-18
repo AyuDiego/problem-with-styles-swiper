@@ -1,0 +1,687 @@
+{
+  "pg-ui": {
+    "routes": {
+      "election": {
+        "title": "Select an Election",
+        "selectArea": "Select Area",
+        "subtitleGroup": "Choose an election group from the list below.",
+        "subtitle": "In this group there are {{ election }} elections available. Please select the Area and the election then click the button below to set up your Political Group inside the election.",
+        "subtitleOne": "There is one election available. Please select the election and click the button below to access the election and set up your Political Group.",
+        "activeElections": "Active elections: {{ totalElections }}",
+        "electionType": "{{ electionType }}",
+        "electionTypeName": "{{ electionTypeName }}",
+        "id": "ID: {{ totalId }}",
+        "seats": "Seats: {{ totalSeat }}",
+        "votingDate": "Day of voting: {{ totalElectionDate }}",
+        "electionDate": "Election date",
+        "submitDay": "Last submit day",
+        "role": "Role: {{ totalRole }}",
+        "lastSubmit": "Last submit day:",
+        "area": "Area:",
+        "nominationDate": "Nomination date"
+      },
+      "addressBook": {
+        "BSN": "Citizen service number (BSN)",
+        "addPerson": "Add person",
+        "addressBook": "Address book",
+        "addressBookExportFormat": "Address_book_",
+        "affix": "Affix",
+        "callSign": "Call sign",
+        "callSignDisplayed": "Display call in documents",
+        "city": "City",
+        "cityLabel": "City",
+        "columnsToExport": "Columns to export: *",
+        "correspondencePersonalAddress": "Correspondance personal address",
+        "country": "Country",
+        "countryLabel": "Country",
+        "countryOfResidence": "Country of residence",
+        "dateOfBirth": "Date of birth",
+        "declarationOfSettle": "Declaration of settle",
+        "deleteEverywhere": "Yes, delete everywhere",
+        "deleteOnly": "Yes, delete only in here",
+        "displayCallSign": "Display call sign in documents",
+        "displayGender": "Display gender in documents",
+        "email": "Email",
+        "emptyListMessage1": "You don’t have persons in the address book at the moment.",
+        "emptyListMessage2": "Please press one of the buttons below in order to start adding person to the address book.",
+        "exportFormat": "Export format: *",
+        "exportHeader": "Export person in Address Book",
+        "fullName": "Full name",
+        "gender": "Gender",
+        "genderDisplayed": "Display gender in documents",
+        "initials": "Initials",
+        "itemsSelected": "{{value}} items selected",
+        "lastName": "Last name",
+        "municipality": "Municipality",
+        "municipalityLabel": "Municipality",
+        "noKeepIt": "No, keep it",
+        "numberOfPersons": "Persons ({{value}})",
+        "personalAddressEnabled": "Use general correspondence address of Party",
+        "personalData": "Personal data",
+        "phoneNumber": "Phone number",
+        "placeOfResidence": "Place of residence",
+        "removeEntryMsg": "Are you sure you want to remove this entry?",
+        "removeSelectionMsg": " Are you sure you want to remove this selection?",
+        "streetAndHouseNumber": "Street and house number",
+        "streetAndHouseNumberLabel": "Street and house number",
+        "useCorrespondenceAddressParty": "Use general correspondence address of Party: *",
+        "zipCode": "Zip code",
+        "zipCodeLabel": "Zip code"
+      }
+    }
+  },
+  "pg": {
+    "routes": {
+      "common": {
+        "standalone": "Stand-alone",
+        "coalition": "Coalition",
+        "blanklist": "Blank list",
+        "order": "List Position",
+        "remove": "Remove",
+        "add": "Add",
+        "error": "Error",
+        "continue": "Continue",
+        "start": "Start",
+        "all": "All",
+        "cancel": "Cancel",
+        "csv": ".csv",
+        "delete": "Delete",
+        "selected": "selected",
+        "edit": "Edit",
+        "confirm": "Confirm List",
+        "listSubmitters": "List Submitters",
+        "election": "municipal elections",
+        "export": "Export",
+        "gender": "Gender",
+        "import": "Import",
+        "no": "No",
+        "noResultsFound": "No results found",
+        "ods": ".ods",
+        "paginatorMessage": "Showing {first} to {last} of {totalRecords} entries",
+        "save": "Save",
+        "search": "Search",
+        "select": "Select",
+        "title": "Political Groups",
+        "type": "Type",
+        "update": "Update",
+        "upload": "Upload",
+        "xlsx": ".xlsx",
+        "yes": "Yes",
+        "confirmButton": "Confirm",
+        "ok": "Ok",
+        "success": "Success",
+        "warning": "Warning"
+      },
+      "pg-cu-standalone-route": {
+        "title": "Party definition",
+        "description": "(data for document H3-1)",
+        "gcaTitle": "General correspondence address",
+        "gcaDescription": "(description here)"
+      },
+      "pg-cu-coalition-route": {
+        "title": "Coalition definition",
+        "description": "(data used in document H3-2)",
+        "gcaTitle": "General correspondence address",
+        "gcaDescription": "(description here)"
+      },
+      "pg-cu-blanklist-route": {
+        "gcaTitle": "General correspondence address",
+        "gcaDescription": "(description here)"
+      },
+      "pg-route": {
+        "title": "Participating political group",
+        "titleExplanation": "Basic data of the list",
+        "explanation": "In order to create the list it is only necessary to fill in the basic information of the political group.",
+        "titlePgConfiguration": "Political group configuration",
+        "description": "(description here)",
+        "typeOfFrame": "Type of frame: *",
+        "tabStandaloneDescription": "Single registered designation",
+        "tabCoalitionDescription": "Union of multiple registered designation",
+        "tabBlanklistDescription": "There is no registered designation"
+      },
+      "pg-read-route": {
+        "title": "Political Groups",
+        "titleExplanation": "Political group configuration details",
+        "typeOfFrame": "Type of frame",
+        "regDesignation": "Registered designation",
+        "fullStatName": "Full statutory name",
+        "mandate": "Political Group's mandate",
+        "designation": "Designation",
+        "coalitionName": "Coalition Name",
+        "partyNumber": "Party #",
+        "gca": "General correspondence address"
+      }
+    },
+    "components": {
+      "pg-coalition-definition": {
+        "coalitionName": "Coalition name: *",
+        "partyNumber": "Party #",
+        "addParty": "Add party to coalition",
+        "placeholderType": "Type"
+      },
+      "pg-general-correspondence-address": {
+        "addressLabel": "Street and house number: *",
+        "placeholderType": "Type",
+        "municipalityLabel": "Municipality: *",
+        "zipCodeLabel": "Zip code: *",
+        "cityLabel": "City: *",
+        "countryLabel": "Country: *",
+        "mandatory": "*This field is mandatory"
+      },
+      "pg-party": {
+        "regDesignationLabel": "Registered designation: *",
+        "kiesraadLink": "Check them all on kiesraad.nl",
+        "fullStatNameLabel": "Full statutory name: *",
+        "mandateLabel": "Political Group's mandate: *",
+        "createMandate": "Enter other Political Group's mandate from scratch"
+      },
+      "pg-party-definition": {
+        "designationLabel": "Designation: *",
+        "placeholderType": "Type"
+      },
+      "pg-party-dialog": {
+        "headerTitle": "Enter other Political Group's mandate",
+        "headerText": "The data entered will be saved in the address book.",
+        "affixLabel": "Affix: ",
+        "placeholderType": "Type",
+        "lastNameLabel": "Last name: *",
+        "initialsLabel": "Initials: *",
+        "callSignLabel": "Call sign: ",
+        "emailLabel": "Email: *",
+        "phoneNumberLabel": "Phone number: *"
+      }
+    }
+  },
+  "election": {
+    "routes": {
+      "overview": {
+        "textEmpty1": "You don't have any election started.",
+        "textEmpty2": "Please select one election from the available election group in order to start setting  up your Political Group.",
+        "title": "Overview Elections",
+        "text-center": "Hello, your PG team is currently working on these elections:",
+        "selectElection": "Select an Election"
+      }
+    },
+    "common": {
+      "messages": {
+        "completed": "Completed",
+        "inProgress": "In progress",
+        "open": "Open"
+      }
+    }
+  },
+  "lists": {
+    "routes": {
+      "lists-any-list-candidates-cu-route": {
+        "explanation": "In order to add a new candidate to the list it please complete the form about their information.",
+        "updateExplanation": "Please complete the form about their information.",
+        "listPositionTitle": "List position",
+        "listPositionDescription": "Description here",
+        "listPositionLabel": "Position number on the list: *",
+        "personalDataTitle": "Personal data",
+        "personalDataDescription": "Description here",
+        "Ballot preview": "Ballot preview",
+        "affixLabel": "Affix:",
+        "lastNameLabel": "Last Name: *",
+        "initialsLabel": "Initials: *",
+        "callSignLabel": "Call sign:",
+        "callSignCheckBox": "Display call sign in documents",
+        "citizenServiceNumberLabel": "Citizen Service Number (BSN):",
+        "dateOfBirthLabel": "Date of birth: *",
+        "genderLabel": "Gender: ",
+        "genderCheckBox": "Display gender in documents",
+        "placeOfResidenceLabel": "Place of residence: *",
+        "municipalityOfResidenceLabel": "Municipality of residence: *",
+        "countryOfResidenceLabel": "Country of residence: *",
+        "correspondanceAddressTitle": "Personal correspondence address",
+        "correspondanceAddressDescription": "Description here",
+        "useCorrespondenceAddressParty": "Use general correspondence address of Party: *",
+        "documentationTitle": "Documentation",
+        "documentationDescription": "Description here",
+        "statementNotToStandAsCandidate": "Add statement not to stand as a candidate in another member state:",
+        "downloadStatementNotToStandAsCandidate": "Download template (Y13)",
+        "declarationOfNonExclusion": "Add Declaration that you are not excluded from the right to stand for election in your home Member State/Declaration of non-exclusion from the right to stand for election in your home Member State",
+        "downloadDeclarationOfNonExclusion": "Download template (Y35)",
+        "declarationOfSettleTitle": "Declaration of settle",
+        "declarationOfSettleDescription": "Description here",
+        "useDeclarationOfSettle": "Add Declaration of Intent to Establish:",
+        "downloadTemplateSettle": "Download template settle",
+        "candidatesMandate": "Candidate's Mandate",
+        "candidatesMandateDescription": "You need to fill the info of an authorized representative because the residence of this candidate is set outside the European part of Netherlands.",
+        "countryMandateWarningDescription": "The Candidate's Mandate will be deleted but not in the Address Book"
+      },
+      "uniqueListRoute": {
+        "finalizeList": "Finalize List",
+        "revertFinalizeList": "Revert finalized list",
+        "overPanel": "Are you sure you want to revert the final list?",
+        "overPanelSubmitter": "You need to complete list submitter before finalizing the list.",
+        "overPanelList": "You need to solve lists errors before finalizing the list.",
+        "overPanelCandidateList": "You need at least some candidate."
+      }
+    },
+    "components": {
+      "lists-address-book-dialog": {
+        "addPerson": "Add Selected Persons",
+        "title": "Select a person from your address book",
+        "limitExceed": "Maximum number of candidates ({{ limitExceed }}) per list has been reached."
+      },
+      "list-template": {
+        "home": "Back Home",
+        "lists": "Lists",
+        "list-candidates-create": "Add new candidate",
+        "list-candidates-read": "Lists"
+      },
+      "lists-form-substitutes": {
+        "explanation": "Use the form below to fill information about the second substitute for recovery from absenteeism.",
+        "personalDataTitle": "Personal data",
+        "personalDataDescription": "Description here",
+        "initialsLabel": "Initials: *",
+        "callSignLabel": "Call sign:",
+        "affixLabel": "Affix:",
+        "lastNameLabel": "Last Name: *",
+        "genderLabel": "Gender:",
+        "addressDataTitle": "Address",
+        "addressDataDescription": "Description here",
+        "placeOfResidenceLabel": "Place of residence: *",
+        "municipalityOfResidenceLabel": "Municipality of residence: *",
+        "countryOfResidenceLabel": "Country of residence: *",
+        "correspondanceAddressTitle": "Personal correspondence address",
+        "correspondanceAddressDescription": "Description here",
+        "useCorrespondenceAddressParty": "Use general correspondence address of Party: *"
+      },
+      "listCandidatesRead": {
+        "removeMultipleCandidate": "By deleting this list you will remove all the candidates and costituencies assigned.",
+        "emptyTextMultiCostiFirst": "The political party will submit one single list to the constituency {{ constituencyName }} for this election",
+        "emptyTextMultiCostiSecond": "In case you want to continue please press one of the buttons below so to start adding candidates to the list",
+        "emptyTextOneCosti": "Please press of the buttons below in order to start adding candidates to your list.",
+        "personExist": "Maybe the candidate already exists, please check the fields: gender, last name, place of residence and date of birth.",
+        "checkboxLabel": "Show only candidates with warnings and errors",
+        "candidatesWithWarnings": "candidates with warnings",
+        "candidatesWithErrors": "candidates with errors"
+      },
+      "listSubstitutesRead": {
+        "emptyListSubmitterTitle": "No submitter added.",
+        "emptyListSubmitterDescription": "In order to add one ore more substitutes you need first to add a list submitter.",
+        "name": "Name",
+        "gender": "Gender",
+        "placeOfResidence": "Place of residence",
+        "country": "Country",
+        "pca": "Personal Correspondance Address",
+        "addSubstitute": "Add substitute"
+      },
+      "finalize-lists-dialog": {
+        "header": "Finalize your lists",
+        "finalizing": "By finalizing, you declare your lists of candidates complete.",
+        "changesWarning": "You can then no longer make changes unless you revert the list.",
+        "finalDocuments": "After this process the lists won't be submitted to the corresponding central electoral commitee yet. To do so you have to go inside section \"Final Documents\"."
+      }
+    },
+    "common": {
+      "messages": {
+        "candidates": "Candidates",
+        "lists": "Lists",
+        "listSubmitter": "List Submitter",
+        "subtitutes": "Subtitutes",
+        "listEmpty": "Your list is empty",
+        "addCandidate": "Add Candidate",
+        "selectFromAddressBook": "Select from Address Book",
+        "cancelRevert": "No, keep it",
+        "revert": "Yes, revert it"
+      }
+    },
+    "modules": {
+      "list-submitter": {
+        "edit": "List submitter details",
+        "pdTitle": "Personal Data",
+        "gdDescription": "(description here)",
+        "addressTitle": "Address",
+        "pcaTitle": "Personal correspondence address",
+        "name": "Name",
+        "gender": "Gender: ",
+        "placeOfResidence": "Place of residence: ",
+        "countryOfResidence": "Country of residence: *",
+        "country": "Country",
+        "pca": "Personal Correspondence Address",
+        "municipality": "Municipality",
+        "explanation": "Use the form bellow to fill information about the list submitter responsible for presenting the list.",
+        "initials": "Initials: *",
+        "callSign": "Call Sign:",
+        "affix": "Affix:",
+        "lastName": "Last Name: *",
+        "correspondanceAddressTitle": "Use general correspondence address of party: *"
+      },
+      "list-substitutes": {
+        "emptySubmitter": "You need to create a Submitter first",
+        "navigate-submitter": "Add submitter"
+      }
+    }
+  },
+  "candidates": {
+    "routes": {
+      "candidates-cu-route": {
+        "explanation": "Fill in the form fields to add the info required about lists and documents to present for the selected election.",
+        "listsTitle": "Lists configuration",
+        "listsDescription": "(description here)",
+        "listsSeatsLabel": "Got 16 or more seats last election : *",
+        "documentsTitle": "Documents configuration",
+        "documentsDescription": "(description here)",
+        "documentsGenderLabel": "Specify gender in documents for all candidates : *",
+        "documentsCallSignLabel": "Add call sign in documents for all candidates: *",
+        "sixteenSeatsAdvice": "By saving this option you are limiting the number of candidates to 50 instead of 80 you can present in a list. All the candidates that stand out will be removed automatically.",
+        "mandatory": " *This field is mandatory"
+      },
+      "candidates-read-route": {
+        "title": "Candidates",
+        "titleExplanation": "Candidates configuration details",
+        "listsSeatsTitle": "16 or more seats last election",
+        "documentsGenderTitle": "Specify gender in documents",
+        "documentsCallSignTitle": "Specify call sign in documents"
+      }
+    }
+  },
+  "final-docs": {
+    "routes": {
+      "annexes-route": {
+        "annexesDeclaration": "I declare I will include the following annex(es) together with the list of candidates (tick as appropriate):",
+        "includeModelH3": "A statement from the authorised representative(s) of the political group(s) authorising me to to place the designation above the list of candidates, because I have placed a designation above the list placed (model H 3-1 or H 3-2).",
+        "includeModelH4": "Statements from voters that they support the list, as the list does not qualify for the exemption from this requirement (model H 4).",
+        "includeModelH9": "A declaration by each candidate appearing on the list that he agrees to sentence his candidature on the list (model H 9).",
+        "copy": "A copy of a valid identity document of each candidate who does not sit on the body for which the election is held.",
+        "includeModelH12": "Proof of payment of the deposit, as the list does not qualify for the waiver of this obligation (model H 12).",
+        "declarationOfIntendedResidence": "A declaration of intended residence of any candidate appearing on the list who is not resident in the area to which the election relates (only in the case of an election of provincial councils, the general board of and water board, a municipal council and the island councils of the public bodies of Bonaire, Saba or Sint Eustatius)."
+      },
+      "overview-route": {
+        "systemWarnings": "The system has found {{ numberOfWarning }} warning(s) in the list of candidates you are going to present to this election:",
+        "reviewWarning": "A substantive review will takes place only after the central electoral committee has received the written list of candidates together with the final documents. Please take into account that if you continue, there may be (mandatory) data missing from your list of candidates that could lead to an omission.",
+        "correctListWarning": "If you want to make corrections click the link below so to enter again the list. Remember to first revert the list, make your changes and finalize the list again.",
+        "candidatesWarning": "Candidate {{ selectedName }} at list position {{ selectedCandidatePosition }}: {{ selectedReason }}"
+      },
+      "welcome-route": {
+        "welcomeTitle": "Welcome to the final section for generating the final documentation",
+        "welcomeIntro": "You have completed all the other sections and you are able to generate the final documents to be presented by the list submitter.",
+        "startSteps": "Click start in order to access the process."
+      },
+      "generate-route": {
+        "fillFormFields": "Fill in the form fields to add the info required about lists and documents to present for the selected election.",
+        "modelH1": "Model H1",
+        "language": "Language",
+        "generateInFrisian": "Generate all documents and templates in Frisian: *",
+        "declarationOfConsent": "Declaration of consent",
+        "declarationOfConsentH9": "Declaration of consent (H 9) : *",
+        "prepareOnlyOneDocument": "Prepare only one document",
+        "prepareSeparateDocuments": "Prepare separate documents for each candidate",
+        "processMayBeSlow": "Depending on the number of candidates, this process may take some time.",
+        "generateModel": "Generate Model H1",
+        "previous": "Previous",
+        "theseWillBeGenerated": "These is the file that will be generated",
+        "theseWillBeAttached": "These are the annexes that will be attached",
+        "modelH1PDF": "Model-h1.pdf",
+        "model": "Model",
+        "generating": "Generating."
+      },
+      "finalize-route": {
+        "stepsFinalized": "You have finalize all the steps",
+        "whenSigning": " When signing your list of candidates, make sure that the same date an time is printed at the bottom of the form pages. This means that each form belongs to the same set, which will also be checked by the central electoral committee.",
+        "makeSure": "Make sure the various documents are correctly signed.",
+        "submittingParty": "List of candidates (H1 form) by the submitting party.",
+        "authToPlace": "Authorization to place the list designation (H3-1 or H3-2 form) by the authorized representative of the political group.",
+        "declarationOfSupport": "Declaration of support (H4 form) by voter who is registered as a voter with the municipality.",
+        "declarationOfAssent": "Declaration of assent (H9 form) by candidate.",
+        "presentAllDocuments": "You have to present all the documents to the central electoral committee between xxxx and xxxx on xxxx (the day of the nomination of candidates). To avoid unnecessary waiting, it is wise to make an before handing in the required documents.",
+        "downloadModelH1": "Download Model H1",
+        "generateNewModelH1": "Generate New Model H1",
+        "byGenerating": "By generating a new Model H1 you are going to remove data of all  the previous generated documents and new Hash-code will be created  at the end of the process.",
+        "maintainCurrent": "No, maintain the current Model H1",
+        "restartProcess": "Yes, restart the process again",
+        "model": "Model",
+        "description": "(Description here)",
+        "mandatoryField": "*This field is mandatory"
+      }
+    },
+    "common": {
+      "labels": {
+        "next": "Next",
+        "cancel": "Cancel",
+        "start": "Start",
+        "correctionsButton": "Make corrections to the list",
+        "confirmDeclaration": "Confirm Declaration",
+        "step": "Step",
+        "finalDocs": "Final Documents",
+        "backHome": "Back Home",
+        "yes": "Yes",
+        "no": "No"
+      }
+    }
+  },
+  "team-manager": {
+    "routes": {
+      "team-manager-cu-route": {
+        "explanation": "Use the form below to fill information about new user of your team.",
+        "roleTitle": "Role",
+        "roleDescription": "(description here)",
+        "roleLabel": "Role: *",
+        "personalDataTitle": "Personal data",
+        "personalDataDescription": "(description here)",
+        "initialsLabel": "Initials: *",
+        "callSignLabel": "Call sign: ",
+        "affixLabel": "Affix:",
+        "lastNameLabel": "Last name: *",
+        "emailLabel": "Email: *",
+        "mobileNumberLabel": "Mobile number: *",
+        "mandatory": " *This field is mandatory"
+      },
+      "team-manager-read-route": {
+        "addUser": "Add User"
+      }
+    },
+    "components": {
+      "empty-team": {
+        "addNewUser": "Add new user",
+        "emptyPGTeamTitle": "Your Political Group is empty.",
+        "emptyPGTeamText": "Please add new coordinator or employee in order to create your team so they will start setting up your Political Group."
+      },
+      "list-team-table": {
+        "noUsersFound": "No users found.",
+        "active": "Active",
+        "pending": "Pending",
+        "deactivated": "Deactivated"
+      }
+    },
+    "common": {
+      "labels": {
+        "deactivate": "Deactivate",
+        "resendInvitation": "Resend invitation",
+        "coordinator": "Coordinator",
+        "employee": "Employee"
+      }
+    }
+  },
+  "omissions": {
+    "routes": {
+      "omissions-cu-route": {
+        "title": "Omissions",
+        "description-title": "Electoral district: {{areaName}}",
+        "description-header": "The chairman of the central electoral committee inform that the central electoral committee for the election of the members of {{ electionName }} as noted one or more omissions with the designation {{ politicalGroupDesignation }} ",
+        "downloading-error": "An error occurred while downloading the file: {{error}} Contact adminstrator",
+        "downloading-success": "File downloaded"
+      }
+    },
+    "components": {
+      "empty-omission": {
+        "title": "Your table of omissions is empty."
+      },
+      "list-team-table": {
+        "noUsersFound": "No users found.",
+        "active": "Active",
+        "pending": "Pending",
+        "deactivated": "Deactivated"
+      }
+    },
+    "common": {
+      "download": "Download"
+    }
+  },
+  "shared": {
+    "common": {
+      "messages": {
+        "area": "Area",
+        "commonError": "There is a error",
+        "warnings": "Warnings",
+        "errors": "There are some errors",
+        "status": "Status",
+        "role": "Role",
+        "users": "Users"
+      }
+    },
+    "components": {
+      "pg-custom-dropdown": {
+        "placeholder": "Select",
+        "noResults": "No results found"
+      },
+      "pg-custom-autocomplete": {
+        "placeholder": "Type or Select",
+        "noResults": "No results found",
+        "suggestion": "+ Enter \"{{ selectedEntity }}\" as new Designation"
+      }
+    },
+    "basicData": {
+      "sidebar": {
+        "overview": "Overview",
+        "elections": "Elections",
+        "teamManagement": "Team Management",
+        "candidates": "Candidates",
+        "finalDocs": "Final Documents",
+        "lists": "Lists",
+        "politicalGroups": "Political Groups",
+        "title": "menu",
+        "omissions": "Omissions"
+      },
+      "toastService": {
+        "pleaseContactSystem": "Please contact with system service.",
+        "notAuthorizations": "Doesn't exist authorizations"
+      },
+      "navbar": {
+        "h1Draft": "Generate H1 draft",
+        "h1GenerateDutch": "Generate in Dutch",
+        "h1GenerateFrisian": "Generate in Frisian",
+        "h1GenerateButtonTooltip": "Generation of H1 Draft will be available after the user includes at least one candidate in a list."
+      },
+      "formErrors": {
+        "invalidFormatDate": "Invalid date format. Allowed format: 00-mm-yyyy, 00-00-yyyy or dd-mm-yyyy",
+        "invalidInitials": "Period must be placed after each. No space between letters or period",
+        "invalidFormatNumber": "Should only have numbers",
+        "invalidLegalAge": "You must select a date for 18 years old and under 99 years old",
+        "invalidDay": "This day doesn't exist",
+        "minLength": "Expect {{requiredLength}} but got {{actualLength}}",
+        "maxLength": "Expect {{requiredLength}} but got {{actualLength}}",
+        "requiredField": "This field is required",
+        "email": "The entered text does not match email pattern"
+      }
+    }
+  },
+  "sharedModules": {
+    "addressBook": {
+      "back": "Back",
+      "paginatorMessage": "Showing {first} to {last} of {totalRecords} entries",
+      "itemsSelected": "{{value}} items selected",
+      "numberOfPersons": "Persons ({{value}})",
+      "fullName": "Full name",
+      "delete": "Delete",
+      "all": "All",
+      "callSign": "Call sign",
+      "gender": "Gender",
+      "placeOfResidence": "Place of residence",
+      "countryOfResidence": "Country of residence",
+      "affix": "Affix",
+      "lastName": "Last name",
+      "initials": "Initials",
+      "callSignDisplayed": "Display call in documents",
+      "email": "Email",
+      "phoneNumber": "Phone number",
+      "BSN": "Citizen service number (BSN)",
+      "dateOfBirth": "Date of birth",
+      "genderDisplayed": "Display gender in documents",
+      "personalAddressEnabled": "Use general correspondence address of Party",
+      "streetAndHouseNumber": "Street and house number",
+      "municipality": "Municipality",
+      "zipCode": "Zip code",
+      "city": "City",
+      "country": "Country",
+      "search": "Search",
+      "edit": "Edit",
+      "noResultsFound": "No results found",
+      "removeEntryMsg": "Are you sure you want to remove this entry?",
+      "noKeepIt": "No, keep it",
+      "deleteEverywhere": "Yes, delete everywhere",
+      "deleteOnly": "Yes, delete only in here",
+      "removeSelectionMsg": " Are you sure you want to remove this selection?",
+      "useCorrespondenceAddressParty": "Use general correspondence address of Party: *",
+      "yes": "Yes",
+      "no": "No",
+      "streetAndHouseNumberLabel": "Street and house number",
+      "municipalityLabel": "Municipality",
+      "select": "Select",
+      "zipCodeLabel": "Zip code",
+      "cityLabel": "City",
+      "countryLabel": "Country",
+      "emptyListMessage1": "You don’t have persons in the address book at the moment.",
+      "emptyListMessage2": "Please press one of the buttons below in order to start adding person to the address book.",
+      "upload": "Upload",
+      "addPerson": "Add person",
+      "exportHeader": "Export person in Address Book",
+      "exportFormat": "Export format: *",
+      "csv": ".csv",
+      "ods": ".ods",
+      "xlsx": ".xlsx",
+      "columnsToExport": "Columns to export: *",
+      "cancel": "Cancel",
+      "export": "Export",
+      "displayCallSign": "Display call sign in documents",
+      "displayGender": "Display gender in documents",
+      "personalData": "Personal data",
+      "correspondencePersonalAddress": "Correspondance personal address",
+      "update": "Update",
+      "addressBook": "Address book",
+      "import": "Import",
+      "save": "Save",
+      "addressBookExportFormat": "Address_book_",
+      "importHeader": "Import person in Address book",
+      "importFormat": "Please, select the file you want to import. Format file supported is .csv.",
+      "chooseFile": "Upload file",
+      "chooseOtherFile": "Upload other file",
+      "fileToImport": "File to import",
+      "importSettings": "Import settings",
+      "withoutUpdating": "Add new persons without updating existing one",
+      "withUpdating": "Add new persons and update existing ones",
+      "numberRowsHeading": "Number of rows headings",
+      "validateAndPreview": "Validate and preview",
+      "importPersonsButton": "Import persons",
+      "preview": "Preview",
+      "displayCall": "Display call sign",
+      "displayGenderShort": "Display gender",
+      "importResults": "Import results",
+      "importErrors": "Errors list",
+      "line": "File row",
+      "personNumber": "Person number",
+      "errorDescription": "Error description",
+      "noErrorsFound": "No errors found",
+      "updatedPersons": "Updated persons",
+      "insertedPersons": "Inserted persons"
+    },
+    "addressBookFormErrors": {
+      "requiredField": "This field is required",
+      "invalidInitials": "Period must be placed after each initial. No space between letters or period",
+      "invalidLegalAge": "You must select a date for 18 years old and under 99 years old",
+      "invalidFormatDate": "Invalid date format. Allowed format: 00-mm-yyyy, 00-00-yyyy or dd-mm-yyyy",
+      "invalidDay": "This day doesn't exist",
+      "email": "The entered text does not match email pattern",
+      "maxLength": "Expect {{requiredLength}} but got {{actualLength}}",
+      "minLength": "Expect {{requiredLength}} but got {{actualLength}}",
+      "pattern": "This field only accepts letters and numbers"
+    },
+    "formInfo": {
+      "street": "Format: Letters and numbers",
+      "zip": "Format: 4 numbers and 2 letters"
+    }
+  }
+}
