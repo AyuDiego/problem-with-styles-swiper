@@ -1,0 +1,31 @@
+h1,
+.h1 {
+  font-family: $font-family-root;
+  //   TO DEFINE
+}
+h2,
+.h2 {
+  //   TO DEFINE
+
+}
+
+h3,
+.h3 {
+  @extend .h1;
+  //   TO DEFINE
+  //   font-size: 14px;
+  //   line-height: 15px;
+}
+
+h4,
+.h4 {
+  @extend .h1;
+  //   TO DEFINE
+}
+
+h5 {
+  @extend .h1;
+  //   TO DEFINE
+}
+
+// TO DEFINE STYLES PROVISIONALLY

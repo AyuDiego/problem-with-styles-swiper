@@ -17,14 +17,14 @@
 
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap";
-// @import "variables";
+@import "variables";
 
 /*                 [2. Fonts ]                   			*/
-// @import "fonts";
+@import "fonts";
 
 /*                 [3. Components Custom Styles ]                   */
-// @import "base";
+@import "base";
 // @import "blocks";
-// @import "core";
+@import "core";
 @import "primeng";
 
