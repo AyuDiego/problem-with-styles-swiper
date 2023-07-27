@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutModule } from './modules/about/about.module';
 
 const routes: Routes = [
   {
-    path: 'about',
+    path: '',
     loadChildren: () =>
-      import('./modules/about/about.module').then((m) => m.AboutModule)
+      import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '**',
+    path: '',
     redirectTo: '',
+    pathMatch: 'full',
   },
   // work y contact
 ];
@@ -19,6 +19,11 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' }),
   ],
+  // imports: [
+  //   RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always', onSameUrlNavigation: "ignore",
+  //   anchorScrolling:'enabled',
+  //   scrollPositionRestoration: 'enabled' }),
+  // ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

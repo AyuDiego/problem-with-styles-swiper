@@ -4,15 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NewCompComponent } from './modules/contact/new-comp/new-comp.component';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './modules/home/pages/home/home.component';
 
 const SHARED_MODULES = [RouterModule];
 
 @NgModule({
-  declarations: [AppComponent, NewCompComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

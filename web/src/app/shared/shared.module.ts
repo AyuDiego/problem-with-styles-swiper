@@ -9,6 +9,8 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { TooltipModule } from 'primeng/tooltip';
 import { NavBarComponent } from './components/web-navbar/web-navbar.component';
+import { MainPanelComponent } from './components/main-panel/web-main-panel.component';
+import { ParallaxItemDirective } from './directives/parallax-item.directive';
  
 
 const PRIME_NG_MODULES = [
@@ -23,8 +25,8 @@ const PRIME_NG_MODULES = [
 // const SHARED_MODULES = [];
 
 @NgModule({
-  declarations: [ NavBarComponent],
-  exports: [ NavBarComponent],
+  declarations: [ NavBarComponent, MainPanelComponent, ParallaxItemDirective],
+  exports: [ NavBarComponent, MainPanelComponent],
   imports: [
     CommonModule,
     RouterModule,

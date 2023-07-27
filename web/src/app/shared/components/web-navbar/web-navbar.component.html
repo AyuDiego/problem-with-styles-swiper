@@ -1,16 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">AYU</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarScroll">
+      <ul class="navbar-nav  " style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active"   routerLink="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Work</a>
+          <a class="nav-link" routerLink="/work">Work</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,7 +27,10 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
         </li>
       </ul>
- 
+      <!-- <a [routerLink]="['/mipaginaconAnchor']" fragmente="tuId"> Ir a mi anchor </a> Example for anchor link -->
+
     </div>
   </div>
 </nav>
+
+ 
