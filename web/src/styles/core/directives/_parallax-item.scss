@@ -1,7 +1,10 @@
 .main-panel {
   &-overflow {
-    overflow: hidden;
-    min-height: 860px;
+    // overflow: hidden;
+    // min-height: 700x;
+
+    // display: flex;
+    position: sticky;
   }
 
   &--text {
@@ -10,7 +13,8 @@
     font-family: $font-family-root-heavy;
     font-size: 96px;
     font-weight: 600;
-    line-height: 116px; /* 120.833% */
+    line-height: 116px;
+    /* 120.833% */
     letter-spacing: -1.44px;
     color: #dafffb;
     text-shadow: 0px 8px 4px #000000;
@@ -19,17 +23,23 @@
 
 .parallax-container {
   width: 103%;
-  height: 860px;
+  height: 1055px;
   overflow: hidden;
   background: url("../../../assets/img/fondo_panel.png") no-repeat top left;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: 103%;
   margin-left: -3%;
   margin-right: -3%;
+  display: flex;
   box-shadow: 10px 23px 250px 41px #000 inset;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
 
   &--flex {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,4 +49,3 @@
     padding: 8% 0px 0px 3%;
   }
 }
- 

@@ -14,6 +14,13 @@
   width: 100%;
   padding: 0;
 
+  line-height: 55px;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+  position: absolute; 
+  right: 0;
+  transition: all 0.4s ease-in-out;
   .navbar-brand {
     @include three-dots-overflow;
     &--text {
@@ -59,7 +66,7 @@
     flex-direction: row;
     align-items: center;
     width: auto;
-    position: absolute;
+    position: absolute; 
     right: 0;
   }
 
