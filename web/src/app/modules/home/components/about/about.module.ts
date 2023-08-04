@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
 import { AboutRoutingModule } from './about-routing.module';
+import { MainPanelComponent } from 'src/app/shared/components/main-panel/web-main-panel.component';
 
 
 
@@ -15,7 +16,7 @@ const ANGULAR_MODULES = [CommonModule, FormsModule];
 
 @NgModule({
   declarations: [],
-  imports: [
+  imports: [ 
     HttpClientModule,
     AboutRoutingModule,
     ...ANGULAR_MODULES,

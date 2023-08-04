@@ -7,7 +7,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class MainPanelComponent implements OnInit {
   constructor() {}
-  
- 
-  async ngOnInit(): Promise<void> {}
+   
+
+  async ngOnInit(): Promise<void> {
+    
+  }
 }

@@ -17,13 +17,14 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always' }),
+    RouterModule.forRoot(routes, {
+      paramsInheritanceStrategy: 'always',
+      onSameUrlNavigation: 'ignore',
+      anchorScrolling: 'enabled',
+      scrollPositionRestoration: 'enabled',
+    }),
   ],
-  // imports: [
-  //   RouterModule.forRoot(routes, { paramsInheritanceStrategy: 'always', onSameUrlNavigation: "ignore",
-  //   anchorScrolling:'enabled',
-  //   scrollPositionRestoration: 'enabled' }),
-  // ],
+
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

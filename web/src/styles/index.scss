@@ -14,7 +14,7 @@
 
 
 /*                 [1. Common ]                   			*/
-
+@import "commons";
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap";
 @import "variables";
@@ -22,9 +22,11 @@
 /*                 [2. Fonts ]                   			*/
 @import "fonts";
 
-/*                 [3. Components Custom Styles ]                   */
-@import "base";
-// @import "blocks";
+/*                 [3. Components ]                   */
+@import "base"; 
 @import "core";
 @import "primeng";
+@import "components";
+
+
 

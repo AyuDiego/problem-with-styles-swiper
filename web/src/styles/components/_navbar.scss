@@ -1,0 +1,244 @@
+/*
+ *  Document   : _navbar.scss
+ *  Description: This scss file for navbar style classes
+ */
+.navbar {
+  font-family: $font-family-root-heavy;
+
+  @include border-radius(0);
+  box-shadow: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 0;
+
+  .navbar-brand {
+    @include three-dots-overflow;
+    &--text {
+      color: $primary-400;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 32px;
+      letter-spacing: 4px;
+      font-family: $font-family-root-light;
+      margin-right: 24px;
+    }
+    &--v-line {
+      border-left: 2px solid $neutral-0;
+      height: 34px;
+      margin-right: 24px;
+    }
+    &:hover {
+      color: $primary-400;
+      text-shadow: 0px 0px 15px $primary-400;
+    }
+  }
+
+  .navbar-collapse {
+    &.in {
+      overflow: visible;
+    }
+  }
+  .navbar-nav {
+    .nav-link {
+      color: $neutral-0;
+      font-size: 13px;
+    }
+    .nav-link:hover {
+      color: $primary-400;
+      text-shadow: 0px 0px 9px $primary-400;
+    }
+  }
+
+  .nav.navbar-nav {
+    display: inline-flex;
+    line-height: 55px;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    position: absolute;
+    right: 0;
+  }
+
+  .container-navigation {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    &--fixed {
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      background: #000;
+      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+      height: 50px;
+    }
+    &--scroll {
+      background: 0 0;
+      transition: background 0.4s ease-in-out, padding 0.4s ease-in-out;
+      transition-duration: 0.4s, 0.4s;
+      transition-timing-function: ease-in-out, ease-in-out;
+      transition-delay: 0s, 0s;
+      transition-property: background, padding;
+      position: static;
+      bottom: -164px;
+      color: $neutral-0;
+      height: 80px;
+    }
+  }
+
+  .container-fluid,
+  .container {
+    display: inline-flex;
+  }
+
+  .dropdown-menu ul.menu li {
+    width: 100%;
+  }
+
+  .nav-left-menu {
+    margin: 3px 15px;
+  }
+
+  .collapse-menu-icon {
+    margin-bottom: 0;
+    padding-left: 21.5px;
+  }
+
+  // .navbar-custom {
+  //   margin-bottom: 0;
+  //   border-color: transparent;
+  //   background-color: #000;
+  //   font-family: "Lato", sans-serif;
+  //   text-transform: uppercase;
+
+  //   .navbar-brand {
+  //     font-weight: 500;
+  //   }
+
+  //   .navbar-brand:focus {
+  //     outline: 0;
+  //   }
+
+  //   .navbar-brand:hover {
+  //     opacity: 0.8;
+  //   }
+
+  //   .navbar-brand .navbar-toggle {
+  //     padding: 4px 6px;
+  //     font-size: 16px;
+  //     color: #fff;
+  //   }
+
+  //   .navbar-brand .navbar-toggle:focus,
+  //   .navbar-brand .navbar-toggle:active {
+  //     outline: 0;
+  //   }
+
+  //   /*Navbar Logo Image*/
+
+  //   a img {
+  //     width: 25px;
+  //     display: inline;
+  //     margin-top: -5px;
+  //     margin-right: 15px;
+  //   }
+
+  //   a {
+  //     color: #fff;
+  //     font-weight: 400;
+  //   }
+
+  //   a:hover {
+  //     color: #ccc;
+  //   }
+
+  //   .nav li a {
+  //     -webkit-transition: background 0.2s ease-in-out;
+  //     -moz-transition: background 0.2s ease-in-out;
+  //     transition: background 0.2s ease-in-out;
+  //     font-weight: 400;
+  //     text-align: center;
+  //     letter-spacing: 1px;
+  //   }
+
+  //   .nav li a:hover {
+  //     outline: 0;
+  //     color: #ccc;
+  //     background-color: transparent;
+  //   }
+
+  //   .nav li a:focus,
+  //   .nav li a:active {
+  //     outline: 0;
+  //     background-color: transparent;
+  //   }
+
+  //   .nav li.active {
+  //     outline: 0;
+  //   }
+
+  //   .nav li.active a {
+  //     background-color: rgba(255, 255, 255, 0.3);
+  //   }
+
+  //   .nav li.active a:hover {
+  //     color: #fff;
+  //   }
+
+  //   @media only screen and (min-width: 768px) {
+  //     .container {
+  //       width: 95%;
+  //     }
+  //   }
+
+  //   @media only screen and (max-width: 818px) {
+  //     .nav > li > a {
+  //       padding: 15px 10px;
+  //     }
+  //   }
+  // }
+  // @media (min-width: 768px) {
+  //   /*.container {
+  //   width: 900px;
+  // }*/
+  //   .navbar-custom {
+  //     padding: 15px 0;
+  //     border-bottom: 0;
+  //     letter-spacing: 1px;
+  //     background: 0 0;
+  //     -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  //     -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  //     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  //   }
+  //   .navbar-custom.top-nav-collapse {
+  //     padding: 0;
+  //     background: #000;
+  //   }
+  // }
+}
+
+nav.navbar {
+  min-height: 80px;
+}
+//     @include transition(all 0.5s);
+
+//   nav,
+//   nav .nav-wrapper i,
+//   nav a.button-collapse,
+//   nav a.button-collapse i {
+//     @media screen and (min-width: 601px) {
+//       height: 54px;
+//       line-height: 54px;
+//     }
+//   }
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 2.25rem;
+  }
+}

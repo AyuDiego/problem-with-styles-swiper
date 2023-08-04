@@ -1,10 +1,16 @@
- 
-
 <div class="main-panel-overflow">
-  <div class="shadow-container"></div>
-  <div parallaxItem class="parallax-container"></div>
+  <div parallaxItem class="parallax-container">
+    <div class="parallax-container--flex">
+      <p class="main-panel--text">Programming<br>and Design<br>of the FUTURE</p>
 
-  <p class="main-panel-text">Programming
-    and Design
-    of the FUTURE</p>
+      <button
+        pButton
+        class="main-panel--button"
+        [routerLink]="['/about']"
+        fragment="about"
+      >
+        About me
+      </button>
+    </div>
   </div>
+</div>
