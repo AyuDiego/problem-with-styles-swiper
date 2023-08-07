@@ -11,7 +11,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { NavBarComponent } from './components/web-navbar/web-navbar.component';
 import { MainPanelComponent } from './components/main-panel/web-main-panel.component';
 import { ParallaxItemDirective } from './directives/parallax-item.directive';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; 
  
 
 const PRIME_NG_MODULES = [

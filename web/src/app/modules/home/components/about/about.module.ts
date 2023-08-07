@@ -2,25 +2,21 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; 
-import { AboutRoutingModule } from './about-routing.module';
-import { MainPanelComponent } from 'src/app/shared/components/main-panel/web-main-panel.component';
+import { AboutRoutingModule } from './about-routing.module'; 
+import { AboutComponent } from './about.component';
 
 
 
 
 const ANGULAR_MODULES = [CommonModule, FormsModule];
-// const ROUTES = [];
-// const SHARED_MODULES = [];
-// const PRIME_NG = [ 
-// ];
-
 @NgModule({
-  declarations: [],
+  declarations: [AboutComponent],
   imports: [ 
     HttpClientModule,
     AboutRoutingModule,
     ...ANGULAR_MODULES,
   ],
+  exports: [AboutComponent],
   providers: []
 })
 export class AboutModule {

@@ -1,15 +1,17 @@
-<web-navbar></web-navbar>
-<div class="main-page">
-   
-  <div class="main-panel-overflow">
-    <web-main-panel></web-main-panel>
-  </div>
-  
-  <div class="main-layout-route-content">
-    <ng-container>
+ 
+    <ng-container *ngIf="activatedUrl; else homePageContent">
       <div class="main-page-content">
         <router-outlet></router-outlet>
       </div>
     </ng-container>
-  </div>
-</div>
+
+    <ng-template #homePageContent>
+      <ng-container>
+        <div class="main-page-content">
+          <web-about></web-about>  
+          <web-work></web-work>
+        </div>
+      </ng-container>
+    </ng-template>
+ 
+ 

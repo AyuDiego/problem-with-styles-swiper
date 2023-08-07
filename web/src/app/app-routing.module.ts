@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+export const appRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>
@@ -17,11 +17,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {
+    RouterModule.forRoot(appRoutes, {
       paramsInheritanceStrategy: 'always',
       onSameUrlNavigation: 'ignore',
       anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'enabled',
+      scrollPositionRestoration: 'enabled', 
     }),
   ],
 
