@@ -35,6 +35,11 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 
   &--flex {
     position: fixed;
@@ -47,3 +52,4 @@
     padding: 13.5% 0px 0px 0px;
   }
 }
+ 

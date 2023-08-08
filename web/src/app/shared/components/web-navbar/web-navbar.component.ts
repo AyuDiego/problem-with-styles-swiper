@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
       this.document.body.scrollTop ||
       0;
 
-    if (offset > 1000) {
+    if (offset > 980) {
       this.isNavbarFixed = true;
     } else {
       this.isNavbarFixed = false;

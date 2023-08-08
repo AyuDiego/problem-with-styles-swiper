@@ -5,8 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'web-home',
   templateUrl: './home.component.html',
 })
-export class HomeComponent implements OnInit {
-  @HostBinding('class') className = 'flex-container';
+export class HomeComponent implements OnInit { 
   activatedUrl!: string;
 
   constructor(private route: ActivatedRoute) {
