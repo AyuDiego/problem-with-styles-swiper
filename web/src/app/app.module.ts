@@ -10,7 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MainPageComponent } from './modules/home/pages/main/main.page';
 import { HomeModule } from './modules/home/home.module';
 
-const SHARED_MODULES = [RouterModule.forRoot(appRoutes)];
+const SHARED_MODULES = [RouterModule.forRoot(appRoutes,  {
+  paramsInheritanceStrategy: 'always',
+  onSameUrlNavigation: 'ignore',
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled', 
+})];
 
 @NgModule({
   declarations: [AppComponent, MainPageComponent  ],

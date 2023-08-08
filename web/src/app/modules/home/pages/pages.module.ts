@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { WorkModule } from '../components/work/work.module';
  
 @NgModule({
-  declarations: [ WorkModule],
-  imports: [CommonModule ],
+  declarations: [ ],
+  imports: [CommonModule],
   exports: [],
 })
 export class PagesModule {}

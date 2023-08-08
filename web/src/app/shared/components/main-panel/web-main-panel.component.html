@@ -2,7 +2,7 @@
   <div parallaxItem class="parallax-container">
     <div class="parallax-container--flex">
       <p class="main-panel--text">Programming<br>and Design<br>of the FUTURE</p>
-
+<!-- 
       <button
         pButton
         class="main-panel--button"
@@ -10,7 +10,21 @@
         fragment="about"
       >
         About me
+      </button> -->
+
+      <button class="btn" type="button"  [routerLink]="['/about']"
+      fragment="about">
+        <strong>ABOUT ME</strong>
+        <div id="container-stars">
+          <div id="stars"></div>
+        </div>
+      
+        <div id="glow">
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
       </button>
+      
     </div>
   </div>
  

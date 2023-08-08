@@ -17,7 +17,7 @@ export class ParallaxItemDirective implements OnInit {
     // this.eleRef.nativeElement.style.position = 'absolute';
     this.eleRef.nativeElement.style.top = this.top;
     this.eleRef.nativeElement.style.left = this.left;
-    this.eleRef.nativeElement.style.backgroundPosition = `calc(85% + 0px) calc(100% + 0px)`;
+    this.eleRef.nativeElement.style.backgroundPosition = `calc(62% + 0px) calc(68% + 0px)`;
     this.eleRef.nativeElement.style.opacity = this.opacity;
   }
 
@@ -36,6 +36,6 @@ export class ParallaxItemDirective implements OnInit {
       this.newY = -(cursorY * this.movement);
     }
    
-    this.eleRef.nativeElement.style.backgroundPosition = `calc(90% + ${ this.newX }px) calc(100% + ${ this.newY }px)`;
+    this.eleRef.nativeElement.style.backgroundPosition = `calc(62% + ${ this.newX }px) calc(68% + ${ this.newY }px)`;
   }
 }
