@@ -1,0 +1,38 @@
+ 
+  
+  #pagina {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  #contenido {
+    padding-bottom:50px; /* este valor debe ser igual o mayor al alto del pie */
+  }
+  
+  footer{
+    height:501px;
+    line-height:50px;
+    bottom:0;
+    left:0;
+    width:100%;
+    // padding-bottom:400px; 
+    background-color: $primary-700;
+    position: relative;
+ 
+
+  }
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -4,16 +4,18 @@
   flex-direction: column;
   width: 100%;
 }
-.main-page{
+
+.main-page {
   display: block;
 }
+
 .main-layout-route {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-.main-layout-route-content { 
+.main-layout-route-content {
   position: relative;
   min-height: 100svh;
   z-index: 10;
@@ -23,12 +25,12 @@
 .main-page-content {
   // display: flex;
   // flex: 1;
-  // flex-direction: column; 
- 
+  // flex-direction: column;
+
   background-color: transparent;
- 
+
   width: 100%;
-  height: fit-content; 
+  height: fit-content;
 }
 
 .main-page-item {
@@ -42,8 +44,9 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
   &--page {
-    flex-grow: 1; 
+    flex-grow: 1;
     background: transparent;
     // height: 860px; //provisional whit no content
   }
@@ -61,35 +64,95 @@
   font-size: 0.8rem;
 }
 
-
-
 .padding-top-50 {
-  padding-top: 50px; 
+  padding-top: 50px;
 }
-
 
 .outer-container {
   display: flex;
-  flex-wrap: wrap; 
-}
-
-.inner-container {
-  flex: 1;
-  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .left-container {
-  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px;
+
+  &-img-about {
+    background: url("../../assets/img/fondo-main-panel-1.png") top center no-repeat;
+    background-size: cover;
+  }
 }
 
 .right-container {
-  background-color: #e0e0e0;
-}
+  background-color: $primary-700;
 
-.img-background-container {
-  display: flex;
-  justify-content: center;
-  padding: 40px 0px; 
-  background: url("../../assets/img/fondo-main-panel-1.png")top center no-repeat;
-  background-size: cover;
+  &--icon-hi {
+    color: $primary-400;
+    font-family: Consolas;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    /* 125% */
+    letter-spacing: 2.4px;
+    padding: 27px 0px 0px 21px;
+  }
+
+  &--text {
+    &-im {
+      color: $primary-400;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 36px;
+      /* 150% */
+      letter-spacing: -0.36px;
+      padding: 12px 0px 0px 64px;
+    }
+
+    &-name {
+      color: $neutral-0;
+      font-family: "Burford Base";
+      font-size: 128px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 81px;
+      letter-spacing: -3px;
+      padding: 12px 0px 0px 54px;
+      height: 82px;
+    }
+
+    &-surname {
+      color: $neutral-0;
+      font-family: "Burford Base";
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 60px;
+      letter-spacing: -0.9px;
+      padding: 0px 0px 0px 61px;
+    }
+
+    &-description {
+      font-family: "Futura PT Bold";
+      font-size: 18px;
+      font-style: normal;
+      line-height: 30px;
+      letter-spacing: 0.18px;
+      padding: 17px 7% 0px 65px;
+      color: $neutral-0;
+
+      &-title {
+        color: $primary-400;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 30px;
+        padding: 10px 7% 0 65px;
+        font-family: "Futura PT Heavy";
+
+      }
+    }
+  }
 }
