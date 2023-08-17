@@ -5,6 +5,6 @@ import { Component, HostBinding } from '@angular/core';
   templateUrl: './main.page.html',
 })
 export class MainPageComponent {
-  @HostBinding('class') className = 'flex-container';
+  @HostBinding('class') className = '';
   constructor() {}
 }

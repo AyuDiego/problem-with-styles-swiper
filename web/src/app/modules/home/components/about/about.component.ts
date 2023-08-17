@@ -5,7 +5,7 @@ import { Component, HostBinding, OnInit } from '@angular/core';
   templateUrl: './about.component.html',
 })
 export class AboutComponent implements OnInit {
-  @HostBinding('class') className = 'flex-container flex-container--page padding-top-50';
+  @HostBinding('class') className = 'flex-container flex-container--page';
   @HostBinding('id') id = 'about';
 
 

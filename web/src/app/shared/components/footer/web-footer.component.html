@@ -1,9 +1,119 @@
 <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <p class="footer--text">© 2023 Diego Del Barrio Ayuso</p>
-      </div>
+  <div class="mx-auto container-fluid">
+    <div class="d-flex justify-content-center">
+      <p class="footer-brand footer-brand--text">AYU</p>
     </div>
+    <hr />
+    <div class="col-md-12">
+      <ul
+        class="footer-nav mx-auto d-flex align-items-center"
+        style="--bs-scroll-height: 100px"
+      >
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/work']"
+            fragment="work"
+          >
+            Work
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/about']"
+            fragment="about"
+          >
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/work']"
+            fragment="work"
+          >
+            My skills
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/work']"
+            fragment="work"
+          >
+            Experience/Education
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            [routerLinkActive]="'active'"
+            [routerLink]="['/work']"
+            fragment="work"
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+    <hr />
+
+    <!-- aqui va un row que tenga a al izquierda © 2023 Diego Del Barrio Ayuso en el centro iconos de social media  -->
+    <div class="col-md-12 footer-bottom">
+      <p class="d-flex w-50 order-0 footer-text footer-text-left">
+        © 2023 Diego Del Barrio Ayuso
+      </p>
+      <div class="justify-content-center order-1 footer-social-media">
+        <a href="/" target="_blank" class="mx-2">
+          <img
+            class="media-icon"
+            src="../../../../assets/img/social-media/github.svg"
+            alt="Github link"
+          />
+        </a>
+        <a href="/" target="_blank" class="mx-2">
+          <img
+            class="media-icon"
+            src="../../../../assets/img/social-media/linkedin.svg"
+            alt="linkedin link"
+          />
+        </a>
+        <a href="/" target="_blank" class="mx-2">
+          <img
+            class="media-icon"
+            src="../../../../assets/img/social-media/behance.svg"
+            alt="behance link"
+          />
+        </a>
+      </div>
+      <p
+        class="footer-text text-truncate w-50 ext-truncate w-50 text-end order-2 order-md-last footer-text-right"
+      >
+        Imprint
+      </p>
+    </div>
+    <!-- sin el 3º elemento  -->
+    <!-- <div class="col-md-12 footer-bottom">
+        
+        <p class="d-flex w-50 order-0 footer-text  footer-text-left ">© 2023 Diego Del Barrio Ayuso</p>
+
+        <div class="justify-content-center order-1 footer-social-media">
+          <a href="/" target="_blank" class="mx-2">
+            <img class="media-icon" src="../../../../assets/img/social-media/github.svg" alt="Github link" />
+          </a>
+          <a href="/" target="_blank" class="mx-2">
+            <img class="media-icon" src="../../../../assets/img/social-media/linkedin.svg" alt="linkedin link" />
+          </a>
+          <a href="/" target="_blank" class="mx-2">
+            <img class="media-icon" src="../../../../assets/img/social-media/behance.svg" alt="behance link" />
+          </a>
+        </div>
+        <div class="w-50 order-2 footer-text-right"></div>
+      </div> -->
   </div>
 </footer>

@@ -1,10 +1,7 @@
 .main-panel {
-  &-overflow {
-    // overflow: hidden;
-    // min-height: 700x;
-
-    // display: flex;
+  &-overflow { 
     position: sticky;
+  
   }
 
   &--text {
@@ -20,9 +17,11 @@
   }
 }
 
-.parallax-container {
+.parallax-container { 
   width: 100%;
-  height: 1055px;
+  height: 110vh;
+  height: 110svh;
+  // height: 1055px;
   overflow: hidden;
   background: url("../../../assets/img/fondo_panel.png"), lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
   box-shadow: 10px 23px 250px 41px #000 inset;
@@ -31,25 +30,23 @@
   background-size: 1862px 110%;
   // margin-left: -3%;
   // margin-right: -3%;
+  inset: 0;
+  z-index: -50;
   display: flex; 
   flex-direction: column;
   align-items: center;
-  flex-wrap: nowrap;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  flex-wrap: nowrap;  
 
-  &--flex {
-    position: fixed;
+  &--flex { 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 56px;
-    padding: 13.5% 0px 0px 0px;
+    inset: 0;
+    position: fixed;
+    padding: 0 0px 10% 0px;
   }
 }
  
