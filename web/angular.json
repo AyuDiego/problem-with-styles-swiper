@@ -30,8 +30,13 @@
               "node_modules/primeng/resources/primeng.min.css", 
               "src/styles/index.scss"
             ],
-            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-          ]
+            "scripts": [  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+            "node_modules/parallax-js/dist/parallax.min.js"
+          ],
+          "allowedCommonJsDependencies": [
+            "lodash",
+            "parallax-js"
+         ]
           },
           "configurations": {
             "production": {

@@ -1,3 +1,5 @@
+//  @import '../../../../node_modules/compass-mixins/lib/compass';
+//  @import '~compass-mixins/lib/compass/css3';
 .main-panel {
   &-overflow { 
     position: sticky;
@@ -16,27 +18,14 @@
     text-shadow: 0px 8px 4px #000000;
   }
 }
-
 .parallax-container { 
   width: 100%;
+  overflow: hidden;
   height: 110vh;
   height: 110svh;
-  // height: 1055px;
-  overflow: hidden;
-  background: url("../../../assets/img/fondo_panel.png"), lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
-  box-shadow: 10px 23px 250px 41px #000 inset;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 1862px 110%;
-  // margin-left: -3%;
-  // margin-right: -3%;
-  inset: 0;
-  z-index: -50;
-  display: flex; 
-  flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;  
-
+   position: relative;
+   background-attachment: fixed;
+  
   &--flex { 
     display: flex;
     justify-content: center;
@@ -44,9 +33,217 @@
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 56px;
-    inset: 0;
-    position: fixed;
+    inset: 0; 
     padding: 0 0px 10% 0px;
+    position: absolute;
+    
   }
 }
+
+
+// .background { 
+// position: absolute;
+//  width: 103%; 
+//  height: 110%;
+//  left: -3%;
+//  top: -10%;
+//  background-size: cover;
+    
+//     background-attachment: fixed;
+//   .layer{
+//     position: absolute;
+//     width: 103%; 
+//     height: 110%;
+//     left: -3%;
+//     top: -3%;
+//     object-fit: cover;
+//     background: url("../../../assets/img/fondo_panel.png") no-repeat 50% 100%, lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
+//     box-shadow: 10px 23px 250px 41px #000 inset;
+//     background-size: cover;
+    
+//     background-attachment: fixed;
+//     -webkit-transform: translate3d(0,0,0);
+//     -moz-transform: translate3d(0,0,0);
+//     transform: translate3d(0,0,0);
+//     -webkit-transform-style: preserve-3d;
+//     -moz-transform-style: preserve-3d;
+//     transform-style: preserve-3d;
+//     -webkit-backface-visibility: hidden;
+//     -moz-backface-visibility: hidden;
+//     backface-visibility: hidden;
  
+//   }
+//   .layer-1{
+//     position: absolute;
+//     width: 103%; 
+//     height: 110%;
+//     left: -3%;
+//     top: -3%;
+//     object-fit: cover;
+//     background: url("../../../assets/img/fondo_arriba_con_estrellas.png") no-repeat 50% 100%, lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
+//     box-shadow: 10px 23px 250px 41px #000 inset;
+//     background-size: cover;
+    
+//     background-attachment: fixed;
+//     -webkit-transform: translate3d(0,0,0);
+//     -moz-transform: translate3d(0,0,0);
+//     transform: translate3d(0,0,0);
+//     -webkit-transform-style: preserve-3d;
+//     -moz-transform-style: preserve-3d;
+//     transform-style: preserve-3d;
+//     -webkit-backface-visibility: hidden;
+//     -moz-backface-visibility: hidden;
+//     backface-visibility: hidden;
+ 
+//   }
+//   .layer-2{
+//     position: absolute;
+//     width: 103%; 
+//     height: 110%;
+//     left: -3%;
+//     top: -3%;
+//     object-fit: cover;
+//     background: url("../../../assets/img/fondo_abajo.png") no-repeat 50% 100%;
+//     background-size: cover;
+    
+//     background-attachment: fixed;
+//     -webkit-transform: translate3d(0,0,0);
+//     -moz-transform: translate3d(0,0,0);
+//     transform: translate3d(0,0,0);
+//     -webkit-transform-style: preserve-3d;
+//     -moz-transform-style: preserve-3d;
+//     transform-style: preserve-3d;
+//     -webkit-backface-visibility: hidden;
+//     -moz-backface-visibility: hidden;
+//     backface-visibility: hidden;
+//   z-index: 1000; 
+//  }
+
+  
+// }
+
+.banner{
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+  box-shadow: 10px 23px 250px 41px #000 inset;
+  
+}
+.background-stars{
+// position: absolute;
+width: 100%; 
+height: 100%;
+inset: 0;
+object-fit: cover;
+background: url("../../../assets/img/fondo_arriba_sin_estrellas.png")  no-repeat  50% 100% ;
+box-shadow: 10px 23px 250px 41px #000 inset; 
+background-size: cover;
+background-attachment: fixed;
+backface-visibility: hidden;
+
+.layer-2{
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  background: url("../../../assets/img/fondo_abajo.png") no-repeat 50% 100% ;
+  background-size: cover;
+  
+  background-attachment: fixed;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1000;
+}
+.layer-3{
+  position: absolute;
+ width: 110%; 
+ height: 110%;
+ left: -10%;
+ top: -10%;
+  
+}
+}
+
+// n is number of stars required
+@function multiple-box-shadow ($n) { 
+  $value: '#{random(4000)}px #{random(4000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(4000)}px #{random(4000)}px #FFF';
+  
+  }
+  @return unquote($value);
+}
+
+$shadows-small:  multiple-box-shadow(500);
+$shadows-medium: multiple-box-shadow(300);
+$shadows-big:    multiple-box-shadow(100);
+
+@keyframes animStarPanel{ 
+  from { transform: translateY(-2000px) }
+  to { transform: translateY(0)}
+
+}
+
+#stars-1 {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStarPanel 50s linear infinite;
+
+  &:after{
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  } 
+}
+    
+    
+#stars-2{
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStarPanel 100s linear infinite;
+
+  &:after{
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  } 
+} 
+    
+#stars-3{
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStarPanel 150s linear infinite;
+
+  &:after{
+    content: " ";
+    position: absolute;
+    top: 1000px; 
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  } 
+} 

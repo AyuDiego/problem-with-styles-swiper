@@ -1,41 +1,29 @@
-import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef,  OnInit, ViewChild } from '@angular/core';
+import * as Parallax from 'parallax-js';
+
 
 @Directive({
   selector: '[parallaxItem]',
 })
-export class ParallaxItemDirective implements OnInit {
-  @Input() top!: string;
-  @Input() left!: string;
-  @Input() opacity = 1;
-  @Input() inversion = false;
-  @Input() movement = 0.025;
-  public newX!: number;
-  public newY!: number;
-  constructor(private eleRef: ElementRef) {}
+export class ParallaxItemDirective implements AfterViewInit {
+  constructor(private el: ElementRef) {}
 
-  ngOnInit(): void {
-    // this.eleRef.nativeElement.style.position = 'absolute';
-    this.eleRef.nativeElement.style.top = this.top;
-    this.eleRef.nativeElement.style.left = this.left;
-    this.eleRef.nativeElement.style.backgroundPosition = `calc(62% + 0px) calc(68% + 0px)`;
-    this.eleRef.nativeElement.style.opacity = this.opacity;
-  }
+  ngAfterViewInit() {
+    const scene = this.el.nativeElement;
+    const parallaxInstance = new Parallax(scene, {
+      relativeInput: true,
+      hoverOnly: true,
+      pointerEvents: true,
+      limitX: 50,
+      limitY: 50,
+      scalarX: 10,
+      scalarY: 10,
+      clipRelativeInput: true,
+      calibrateX: false,
+      calibrateY: false,
+      originX: 0.5,
+      originY: 0.5,
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(e: { pageX: any; pageY: any; }) {
-    this.movement = this.movement ? this.movement : 0.025;
-
-    const cursorX = e.pageX;
-    const cursorY = e.pageY;
-
-    if (!this.inversion) {
-      this.newX = cursorX * this.movement;
-      this.newY = cursorY * this.movement;
-    } else {
-      this.newX = -(cursorX * this.movement);
-      this.newY = -(cursorY * this.movement);
-    }
-   
-    this.eleRef.nativeElement.style.backgroundPosition = `calc(62% + ${ this.newX }px) calc(68% + ${ this.newY }px)`;
+    });
   }
 }

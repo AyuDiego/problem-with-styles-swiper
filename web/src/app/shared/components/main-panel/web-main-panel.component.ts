@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component,  OnInit } from '@angular/core';
+import * as Parallax from 'parallax-js';
+
 
 @Component({
   selector: 'web-main-panel',
@@ -6,6 +8,7 @@ import { ChangeDetectionStrategy, Component,  OnInit } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class MainPanelComponent implements OnInit { 
+ 
 
   constructor() {}
    
