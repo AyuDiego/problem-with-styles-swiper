@@ -16,10 +16,8 @@
   background-clip: content-box, border-box;
   padding: 0px;
   --glow-color: #000829;
-  --glow-spread-color: #070068;
   --enhanced-glow-color: $primary-700;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-    0 0 4em 1em var(--glow-spread-color),
+  box-shadow: 0 0 1em .25em var(--glow-color)
     inset 0 0 .75em .25em var(--glow-color);
   text-shadow: 0 0 .5em var(--glow-color);
 }

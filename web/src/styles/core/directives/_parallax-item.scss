@@ -1,9 +1,7 @@
-//  @import '../../../../node_modules/compass-mixins/lib/compass';
-//  @import '~compass-mixins/lib/compass/css3';
+
 .main-panel {
-  &-overflow { 
+  &-overflow {
     position: sticky;
-  
   }
 
   &--text {
@@ -18,179 +16,112 @@
     text-shadow: 0px 8px 4px #000000;
   }
 }
-.parallax-container { 
+.parallax-container {
   width: 100%;
   overflow: hidden;
   height: 110vh;
   height: 110svh;
-   position: relative;
-   background-attachment: fixed;
-  
-  &--flex { 
+  position: relative;
+  background-attachment: fixed;
+
+  &--flex {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 56px;
-    inset: 0; 
+    inset: 0;
     padding: 0 0px 10% 0px;
     position: absolute;
-    
   }
 }
 
-
-// .background { 
-// position: absolute;
-//  width: 103%; 
-//  height: 110%;
-//  left: -3%;
-//  top: -10%;
-//  background-size: cover;
-    
-//     background-attachment: fixed;
-//   .layer{
-//     position: absolute;
-//     width: 103%; 
-//     height: 110%;
-//     left: -3%;
-//     top: -3%;
-//     object-fit: cover;
-//     background: url("../../../assets/img/fondo_panel.png") no-repeat 50% 100%, lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
-//     box-shadow: 10px 23px 250px 41px #000 inset;
-//     background-size: cover;
-    
-//     background-attachment: fixed;
-//     -webkit-transform: translate3d(0,0,0);
-//     -moz-transform: translate3d(0,0,0);
-//     transform: translate3d(0,0,0);
-//     -webkit-transform-style: preserve-3d;
-//     -moz-transform-style: preserve-3d;
-//     transform-style: preserve-3d;
-//     -webkit-backface-visibility: hidden;
-//     -moz-backface-visibility: hidden;
-//     backface-visibility: hidden;
- 
-//   }
-//   .layer-1{
-//     position: absolute;
-//     width: 103%; 
-//     height: 110%;
-//     left: -3%;
-//     top: -3%;
-//     object-fit: cover;
-//     background: url("../../../assets/img/fondo_arriba_con_estrellas.png") no-repeat 50% 100%, lightgray -129px -0.226px / 115.357% 104.055% no-repeat;
-//     box-shadow: 10px 23px 250px 41px #000 inset;
-//     background-size: cover;
-    
-//     background-attachment: fixed;
-//     -webkit-transform: translate3d(0,0,0);
-//     -moz-transform: translate3d(0,0,0);
-//     transform: translate3d(0,0,0);
-//     -webkit-transform-style: preserve-3d;
-//     -moz-transform-style: preserve-3d;
-//     transform-style: preserve-3d;
-//     -webkit-backface-visibility: hidden;
-//     -moz-backface-visibility: hidden;
-//     backface-visibility: hidden;
- 
-//   }
-//   .layer-2{
-//     position: absolute;
-//     width: 103%; 
-//     height: 110%;
-//     left: -3%;
-//     top: -3%;
-//     object-fit: cover;
-//     background: url("../../../assets/img/fondo_abajo.png") no-repeat 50% 100%;
-//     background-size: cover;
-    
-//     background-attachment: fixed;
-//     -webkit-transform: translate3d(0,0,0);
-//     -moz-transform: translate3d(0,0,0);
-//     transform: translate3d(0,0,0);
-//     -webkit-transform-style: preserve-3d;
-//     -moz-transform-style: preserve-3d;
-//     transform-style: preserve-3d;
-//     -webkit-backface-visibility: hidden;
-//     -moz-backface-visibility: hidden;
-//     backface-visibility: hidden;
-//   z-index: 1000; 
-//  }
-
-  
-// }
-
-.banner{
+.banner {
   position: relative;
   width: 100%;
   height: 110vh;
   overflow: hidden;
   box-shadow: 10px 23px 250px 41px #000 inset;
-  
 }
-.background-stars{
-// position: absolute;
-width: 100%; 
-height: 100%;
-inset: 0;
-object-fit: cover;
-background: url("../../../assets/img/fondo_arriba_sin_estrellas.png")  no-repeat  50% 100% ;
-box-shadow: 10px 23px 250px 41px #000 inset; 
-background-size: cover;
-background-attachment: fixed;
-backface-visibility: hidden;
-
-.layer-2{
-  position: absolute;
-  width: 100%; 
+.background-stars {
+  // position: absolute;
+  width: 100%;
   height: 100%;
   inset: 0;
   object-fit: cover;
-  background: url("../../../assets/img/fondo_abajo.png") no-repeat 50% 100% ;
+  background: url("../../../assets/img/fondo_arriba_sin_estrellas.png")
+    no-repeat 50% 100%;
+  box-shadow: 10px 23px 250px 41px #000 inset;
   background-size: cover;
-  
   background-attachment: fixed;
-  -webkit-transform: translate3d(0,0,0);
-  -moz-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
-  z-index: 1000;
-}
-.layer-3{
-  position: absolute;
- width: 110%; 
- height: 110%;
- left: -10%;
- top: -10%;
-  
-}
+
+  .layer-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    background: url("../../../assets/img/fondo_abajo.png") no-repeat 50% 100%;
+    background-size: cover;
+
+    background-attachment: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 1000;
+  }
+  .layer-3 {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -10% !important;
+    top: -10% !important;
+  }
 }
 
-// n is number of stars required
-@function multiple-box-shadow ($n) { 
-  $value: '#{random(4000)}px #{random(4000)}px #FFF';
+@function multiple-box-shadow($n) {
+  $value: "#{random(4000)}px #{random(4000)}px #FFF";
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(4000)}px #{random(4000)}px #FFF';
-  
+    $value: "#{$value} , #{random(4000)}px #{random(4000)}px #FFF";
   }
   @return unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(500);
-$shadows-medium: multiple-box-shadow(300);
-$shadows-big:    multiple-box-shadow(100);
+$shadows-small: multiple-box-shadow(800);
+$shadows-medium: multiple-box-shadow(600);
+$shadows-big: multiple-box-shadow(500);
+$shadows-biggest: multiple-box-shadow(400);
 
-@keyframes animStarPanel{ 
-  from { transform: translateY(-2000px) }
-  to { transform: translateY(0)}
+@keyframes animStarPanel-1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
+@keyframes animStarPanel-2 {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
 }
 
 #stars-1 {
@@ -198,28 +129,29 @@ $shadows-big:    multiple-box-shadow(100);
   height: 1px;
   background: transparent;
   box-shadow: $shadows-small;
-  animation: animStarPanel 50s linear infinite;
-
-  &:after{
+  animation: animStarPanel-1 3s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  &:after {
     content: " ";
     position: absolute;
     top: 2000px;
     width: 1px;
     height: 1px;
     background: transparent;
-    box-shadow: $shadows-small;
-  } 
+    box-shadow: $shadows-small; 
+    border-radius: 50%;
+  }
 }
-    
-    
-#stars-2{
+
+#stars-2 {
   width: 2px;
   height: 2px;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation: animStarPanel 100s linear infinite;
+  animation: animStarPanel-2 3s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
 
-  &:after{
+  &:after {
     content: " ";
     position: absolute;
     top: 1000px;
@@ -227,23 +159,46 @@ $shadows-big:    multiple-box-shadow(100);
     height: 2px;
     background: transparent;
     box-shadow: $shadows-medium;
-  } 
-} 
-    
-#stars-3{
+    border-radius: 50%;
+  }
+}
+
+#stars-3 {
   width: 3px;
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation: animStarPanel 150s linear infinite;
-
-  &:after{
+  animation: animStarPanel-1 5s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  &:after {
     content: " ";
     position: absolute;
-    top: 1000px; 
+    top: 1000px;
     width: 3px;
     height: 3px;
     background: transparent;
     box-shadow: $shadows-big;
-  } 
-} 
+    border-radius: 50%;
+  }
+}
+
+#stars-4 {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow: $shadows-biggest;
+  animation: animStarPanel-2 4s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  text-shadow: #dafffb;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    box-shadow: $shadows-biggest;
+    border-radius: 50%;
+    text-shadow: #dafffb;
+  }
+}
