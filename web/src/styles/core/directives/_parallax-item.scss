@@ -7,7 +7,7 @@
   &--text {
     text-align: center;
     font-family: $font-family-root-heavy;
-    font-size: 96px;
+    font-size: 6rem;
     font-weight: 600;
     line-height: 116px;
     /* 120.833% */
@@ -21,18 +21,19 @@
   overflow: hidden;
   height: 110vh;
   height: 110svh;
+  max-height: 110vh;
   position: relative;
   background-attachment: fixed;
 
   &--flex {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 56px;
     inset: 0;
-    padding: 0 0px 10% 0px;
+    bottom: calc(50% - 8vh);
     position: absolute;
   }
 }
@@ -200,5 +201,19 @@ $shadows-biggest: multiple-box-shadow(400);
     box-shadow: $shadows-biggest;
     border-radius: 50%;
     text-shadow: #dafffb;
+  }
+}
+
+//responsive moverlo a una pagina scsss a parte 
+
+@media only screen and (min-width: 2560px) {
+  .parallax-container--flex {
+    bottom: 50%;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  .parallax-container--flex {
+    bottom: 50%;
   }
 }
