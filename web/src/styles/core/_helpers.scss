@@ -23,8 +23,8 @@
   // top: 1005px;
 }
 
-.main-page-content {  
-  background-color: transparent; 
+.main-page-content {
+  background-color: transparent;
   width: 100%;
   height: fit-content;
   position: relative;
@@ -48,17 +48,20 @@
     // height: 860px; //provisional whit no content
   }
 }
-.p-sticky{
+
+.p-sticky {
   position: sticky;
 }
-.p-relative{
+
+.p-relative {
   position: relative;
 }
 
-.p-absolute{
+.p-absolute {
   position: absolute;
 }
-.p-fixed{
+
+.p-fixed {
   position: fixed;
 }
 
@@ -88,81 +91,159 @@
   justify-content: center;
   padding: 90px 0px 40px 0px;
 
-  &-img-about {
-    background: url("../../assets/img/fondo-main-panel-1.png") top center no-repeat;
-    background-size: cover;
+  &__img {
+    &--about {
+      background: url("../../assets/img/fondo-main-panel-1.png") top center no-repeat;
+      background-size: cover;
+    }
+
+    &--work {
+      background: url("../../assets/img/fondo-main-panel-1.png") top center no-repeat;
+      background-size: cover;
+    }
   }
 }
 
 .right-container {
   background-color: $primary-700;
 
-  &--icon-hi {
-    color: $primary-400;
-    font-family: Consolas;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 40px;
-    /* 125% */
-    letter-spacing: 2.4px;
-    padding: 77px 0px 0px 21px;
-  }
+  &-about {
 
-  &--text {
-    &-im {
+    &__icon--hi {
       color: $primary-400;
-      font-size: 24px;
+      font-family: Consolas;
+      font-size: 32px;
       font-style: normal;
       font-weight: 700;
-      line-height: 36px;
-      /* 150% */
-      letter-spacing: -0.36px;
-      padding: 12px 0px 0px 64px;
+      line-height: 40px;
+      /* 125% */
+      letter-spacing: 2.4px;
+      padding: 77px 0px 0px 21px;
     }
 
-    &-name {
-      color: $neutral-0;
-      font-family: "Burford Base";
-      font-size: 128px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 81px;
-      letter-spacing: -3px;
-      padding: 12px 0px 0px 54px;
-      height: 82px;
+    &__text {
+      &--im {
+        color: $primary-400;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        /* 150% */
+        letter-spacing: -0.36px;
+        padding: 12px 0px 0px 64px;
+      }
+
+      &--name {
+        color: $neutral-0;
+        font-family: "Burford Base";
+        font-size: 128px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 81px;
+        letter-spacing: -3px;
+        padding: 12px 0px 0px 54px;
+        height: 82px;
+
+        strong {
+          color: $neutral-0;
+          font-family: "Burford Base";
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: -0.6px;
+          text-shadow: none;
+        }
+      }
+
+      &--surname {
+        color: $neutral-0;
+        font-family: "Burford Base";
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px;
+        letter-spacing: -0.9px;
+        padding: 0px 0px 0px 61px;
+
+        strong {
+          color: $primary-500;
+          font-family: "Burford Base";
+          font-size: 70px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 60px;
+          letter-spacing: -0.6px;
+          text-shadow: none;
+        }
+      }
+
+      &--description {
+        font-family: "Futura PT Bold";
+        font-size: 18px;
+        font-style: normal;
+        line-height: 30px;
+        letter-spacing: 0.18px;
+        padding: 17px 7% 0px 65px;
+        color: $neutral-0;
+
+        &-title {
+          color: $primary-400;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 30px;
+          padding: 10px 7% 0 65px;
+          font-family: "Futura PT Heavy";
+
+        }
+      }
     }
+  }
 
-    &-surname {
-      color: $neutral-0;
-      font-family: "Burford Base";
-      font-size: 60px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 60px;
-      letter-spacing: -0.9px;
-      padding: 0px 0px 0px 61px;
-    }
+  &-work {
+    &__text {
 
-    &-description {
-      font-family: "Futura PT Bold";
-      font-size: 18px;
-      font-style: normal;
-      line-height: 30px;
-      letter-spacing: 0.18px;
-      padding: 17px 7% 0px 65px;
-      color: $neutral-0;
+      &--title {
+        color: $primary-500;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px;
+        letter-spacing: -0.54px;
+        font-family: "Futura PT Heavy";
+        padding: 10px 7% 0 65px;
+        padding: 77px 0 0px 64px;
+      }
 
-      &-title {
+      &--time {
         color: $primary-400;
         font-size: 18px;
         font-style: normal;
         font-weight: 600;
         line-height: 30px;
-        padding: 10px 7% 0 65px;
-        font-family: "Futura PT Heavy";
-
+        padding: 12px 0px 0px 64px;
       }
+
+      &--description {
+        font-family: "Futura PT Bold";
+        font-size: 18px;
+        font-style: normal;
+        line-height: 30px;
+        letter-spacing: 0.18px;
+        padding: 17px 7% 0px 65px;
+        color: $neutral-10;
+      }
+      &--stack{
+        font-family: "Futura PT Bold";
+        font-size: 16px;
+        font-style: normal;
+        line-height: 30px;
+        letter-spacing: 0.18px;
+        padding: 25px 7% 25px 65px;
+       
+        color: $neutral-50;
+      }
+
     }
   }
 }
