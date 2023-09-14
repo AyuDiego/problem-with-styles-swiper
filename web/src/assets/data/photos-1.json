@@ -1,0 +1,46 @@
+[
+            {
+                "itemImageSrc": "assets/img/work/first/logo.svg",
+                "thumbnailImageSrc": "assets/img/work/first/logo.svg",
+                "alt": "Kiesraad",
+                "title": "Logo",
+                "imgClass": "format-img__gallery--logo"
+
+            },
+            {
+                "itemImageSrc": "assets/img/work/first/portal-home.png",
+                "thumbnailImageSrc": "assets/img/work/first/portal-home.png",
+                "alt": "Portal",
+                "title": "Home Page",
+                "imgClass": "format-img__gallery"
+            },
+            {
+                "itemImageSrc": "assets/img/work/first/wiki-ui-messages.png",
+                "thumbnailImageSrc": "assets/img/work/first/wiki-ui-messages.png",
+                "alt": "Ui-Kit",
+                "title": "Messages",
+                "imgClass": "format-img__gallery" 
+            },
+            {
+                "itemImageSrc": "assets/img/work/first/foundations-colors-example.png",
+                "thumbnailImageSrc": "assets/img/work/first/foundations-colors-example.png",
+                "alt": "Ui-Kit Foundations",
+                "title": "Colors",
+                "imgClass": "format-img__gallery" 
+            },
+            {
+                "itemImageSrc": "assets/img/work/first/foundations-typography.png",
+                "thumbnailImageSrc": "assets/img/work/first/foundations-typography.png",
+                "alt": "Ui-Kit Foundations",
+                "title": "Typography",
+                "imgClass": "format-img__gallery" 
+            },
+            {
+                "itemImageSrc": "assets/img/work/first/dashboard-example-kiesraad.png",
+                "thumbnailImageSrc": "assets/img/work/first/dashboard-example-kiesraad.png",
+                "alt": "Dashboard",
+                "title": "Kiesraad",
+                "imgClass": "format-img__gallery"
+            }
+        
+] 

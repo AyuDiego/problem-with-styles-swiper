@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { WorkRoutingModule } from './work-routing.module';
 import { WorkComponent } from './work.component';
-import { PhotoService } from 'src/app/services/photoservice';
+import { PhotoService } from 'src/app/core/services/photo.service';
 
 import { GalleriaModule } from 'primeng/galleria';
 import { ButtonModule } from 'primeng/button'; 

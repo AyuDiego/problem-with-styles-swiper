@@ -1,0 +1,39 @@
+[
+            {
+                "itemImageSrc": "assets/img/work/second/logo-full.svg",
+                "thumbnailImageSrc": "assets/img/work/second/logo-full.svg",
+                "alt": "Crowdsender",
+                "title": "Logo",
+                "imgClass": "format-img__gallery--logo"
+
+            },
+            {
+                "itemImageSrc": "assets/img/work/second/login_crowdsender.png",
+                "thumbnailImageSrc": "assets/img/work/second/login_crowdsender.png",
+                "alt": "Crowdsender",
+                "title": "Login Page",
+                "imgClass": "format-img__gallery"
+            },
+            {
+                "itemImageSrc": "assets/img/work/second/register_crowdsender.png",
+                "thumbnailImageSrc": "assets/img/work/second/register_crowdsender.png",
+                "alt": "Crowdsender",
+                "title": "Registered Page",
+                "imgClass": "format-img__gallery"
+            },
+            {
+                "itemImageSrc": "assets/img/work/second/dashboard_crowdsender.png",
+                "thumbnailImageSrc": "assets/img/work/second/dashboard_crowdsender.png",
+                "alt": "Crowdsender",
+                "title": "Dashboard Page",
+                "imgClass": "format-img__gallery"
+            },
+            {
+                "itemImageSrc": "assets/img/work/second/expand_panel_dashboard.png",
+                "thumbnailImageSrc": "assets/img/work/second/expand_panel_dashboard.png",
+                "alt": "Crowdsender",
+                "title": "Expand Panel Dashboard Page",
+                "imgClass": "format-img__gallery"
+            }
+        
+] 

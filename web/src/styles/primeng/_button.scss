@@ -1,3 +1,22 @@
+:is(button, p-button) {
+  &.p-button {
+    .p-button-label {
+      font-family: $font-family-root;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 16px;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.p-button-secondary:enabled:focus {
+      box-shadow: none;
+    }
+  }
+}
 .main-panel--button {
   &:not(.p-button-outlined, .p-button-text, .nav-item-home, p-button) {
     display: flex; 
