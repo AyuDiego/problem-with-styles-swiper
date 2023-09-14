@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+			      "port": 8080,
             "outputPath": "dist/web",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -70,6 +71,9 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "port": 8080
+        },
           "configurations": {
             "production": {
               "browserTarget": "web:build:production"
