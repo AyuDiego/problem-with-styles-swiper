@@ -68,7 +68,7 @@ export class WorkComponent implements OnInit, OnDestroy {
     console.log(idGallery);
     if (idGallery === 'images') {
       this.showThumbnails = !this.showThumbnails;
-    } else if (idGallery === 'galleria2') {
+    } else if (idGallery === 'images2') {
       this.showThumbnails2 = !this.showThumbnails2;
     }
   }
