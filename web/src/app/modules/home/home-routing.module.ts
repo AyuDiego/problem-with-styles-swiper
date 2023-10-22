@@ -18,6 +18,12 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./components/work/work.module').then((m) => m.WorkModule),
       }, 
+      {
+      path: 'skills',
+      loadChildren: () =>
+           import('./components/skills/skills.module').then((m) => m.SkillsModule),
+         
+       }
 
     ],
   },

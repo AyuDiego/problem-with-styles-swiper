@@ -12,4 +12,16 @@ export class AboutComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  downloadCvFromLocal(){  
+    //se descarga el pdf
+    // let link = document.createElement("a");
+    // link.download = "CV_Diego Del Barrio Ayuso Updated EN 2023.pdf";
+    // link.href = "assets/documents/CV_Diego Del Barrio Ayuso Updated EN 2023.pdf";
+    // link.click();
+    //o se habre una pestaña nueva con el pdf
+    window.open('assets/documents/CV_Diego Del Barrio Ayuso Updated EN 2023.pdf', '_blank');
+
+  }
+
 }
