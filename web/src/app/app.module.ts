@@ -5,30 +5,35 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, appRoutes } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LocationStrategy } from '@angular/common';
+import { HashLocationStrategy } from '@angular/common';
 import { MainPageComponent } from './modules/home/pages/main/main.page';
 import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './shared/shared.module';
 
-const SHARED_MODULES = [RouterModule.forRoot(appRoutes,  {
-  paramsInheritanceStrategy: 'always',
-  onSameUrlNavigation: 'ignore',
-  anchorScrolling: 'enabled',
-  scrollPositionRestoration: 'enabled', 
-})];
+const SHARED_MODULES = [
+  RouterModule.forRoot(appRoutes, {
+    paramsInheritanceStrategy: 'always',
+    onSameUrlNavigation: 'ignore',
+    anchorScrolling: 'enabled',
+    scrollPositionRestoration: 'enabled',
+  }),
+  SharedModule,
+];
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent  ],
+  declarations: [AppComponent, MainPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule,
+    HomeModule,
     ...SHARED_MODULES,
-    SharedModule,
-    HomeModule
+    NgbModule,
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

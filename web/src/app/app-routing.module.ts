@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
 export const appRoutes: Routes = [
   {
@@ -11,18 +11,19 @@ export const appRoutes: Routes = [
     path: '',
     redirectTo: '',
     pathMatch: 'full',
-  },
-  // work y contact
+  }, 
 ];
+
+const routerOptions: ExtraOptions = {
+  paramsInheritanceStrategy: 'always',
+  onSameUrlNavigation: 'ignore',
+  anchorScrolling: 'enabled',
+  scrollPositionRestoration: 'enabled'   
+};
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes, {
-      paramsInheritanceStrategy: 'always',
-      onSameUrlNavigation: 'ignore',
-      anchorScrolling: 'enabled',
-      scrollPositionRestoration: 'enabled', 
-    }),
+    RouterModule.forRoot(appRoutes,  routerOptions),
   ],
 
   exports: [RouterModule],

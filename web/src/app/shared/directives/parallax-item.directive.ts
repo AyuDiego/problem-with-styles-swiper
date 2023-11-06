@@ -5,7 +5,9 @@ import * as Parallax from 'parallax-js';
 @Directive({
   selector: '[parallaxItem]',
 })
+// export class ParallaxItemDirective {
 export class ParallaxItemDirective implements AfterViewInit {
+// 
   constructor(private el: ElementRef) {}
 
   ngAfterViewInit() {

@@ -13,6 +13,7 @@ import { MainPanelComponent } from './components/main-panel/web-main-panel.compo
 import { ParallaxItemDirective } from './directives/parallax-item.directive';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FooterComponent } from './components/footer/web-footer.component';
+import { CarouselComponent } from './components/carousel/web-carousel.component';
  
 
 const PRIME_NG_MODULES = [
@@ -27,12 +28,12 @@ const PRIME_NG_MODULES = [
 // const SHARED_MODULES = [];
 
 @NgModule({
-  declarations: [ NavBarComponent, MainPanelComponent, ParallaxItemDirective, FooterComponent],
-  exports: [ NavBarComponent, MainPanelComponent, FooterComponent],
+  declarations: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective],
+  exports: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent],
   imports: [
-    HttpClientModule,
+// HttpClientModule,
     CommonModule,
-    RouterModule,
+    RouterModule, 
     ...PRIME_NG_MODULES,
   ]
 })

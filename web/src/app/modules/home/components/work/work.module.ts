@@ -1,32 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { WorkRoutingModule } from './work-routing.module';
 import { WorkComponent } from './work.component';
-import { PhotoService } from 'src/app/core/services/photo.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
-import { GalleriaModule } from 'primeng/galleria';
-import { ButtonModule } from 'primeng/button'; 
-import { RippleModule } from 'primeng/ripple'; 
-import { FocusTrapModule } from 'primeng/focustrap';
- 
-const PRIME_NG_MODULES = [
-  GalleriaModule,
-  ButtonModule,   
-  RippleModule,  
-  FocusTrapModule,
-];
-const ANGULAR_MODULES = [CommonModule, FormsModule];
+const ANGULAR_MODULES = [CommonModule];
 @NgModule({
   declarations: [WorkComponent],
   imports: [
+    ...ANGULAR_MODULES,
     HttpClientModule,
     WorkRoutingModule,
-    ...ANGULAR_MODULES,
-    ...PRIME_NG_MODULES,
+    SharedModule,
   ],
   exports: [WorkComponent],
-  providers: [PhotoService],
+  providers: [],
 })
 export class WorkModule {}
