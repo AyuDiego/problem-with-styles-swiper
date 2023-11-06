@@ -8,7 +8,7 @@ export const appRoutes: Routes = [
       import('./modules/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: '',
+    path: '**',
     redirectTo: '',
     pathMatch: 'full',
   }, 

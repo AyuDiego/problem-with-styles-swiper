@@ -7,11 +7,10 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LocationStrategy } from '@angular/common';
-import { HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { MainPageComponent } from './modules/home/pages/main/main.page';
 import { HomeModule } from './modules/home/home.module';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './shared/shared.module'; 
 
 const SHARED_MODULES = [
   RouterModule.forRoot(appRoutes, {
@@ -33,7 +32,7 @@ const SHARED_MODULES = [
     ...SHARED_MODULES,
     NgbModule,
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

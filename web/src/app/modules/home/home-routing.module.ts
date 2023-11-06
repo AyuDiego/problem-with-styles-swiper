@@ -23,18 +23,27 @@ export const routes: Routes = [
       loadChildren: () =>
            import('./components/skills/skills.module').then((m) => m.SkillsModule),
          
-       }
+       },
+       {
+        path: '**',
+        redirectTo: '',
+        pathMatch: 'full',
+
+
+      }
 
     ],
   },
   {
     path: '',
-    redirectTo: '', 
+    redirectTo: '',
+    pathMatch: 'full' 
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),
+  ],
   exports: [RouterModule],
 })
 export class HomeRoutingModule {}

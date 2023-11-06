@@ -1,19 +1,24 @@
-import { ChangeDetectionStrategy, Component,  OnInit } from '@angular/core';
-import * as Parallax from 'parallax-js';
-
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 
 @Component({
   selector: 'web-main-panel',
-  templateUrl: './web-main-panel.component.html', 
+  templateUrl: './web-main-panel.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
 })
-export class MainPanelComponent implements OnInit { 
- 
+export class MainPanelComponent implements OnInit {
+  @Output() scrollAnchor = new EventEmitter<void>();
 
   constructor() {}
-   
 
-  async ngOnInit(): Promise<void> {
-    
+  onButtonClick(): void {
+    this.scrollAnchor.emit();
   }
+  
+  ngOnInit(): void {}
 }
