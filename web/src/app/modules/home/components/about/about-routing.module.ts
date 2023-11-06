@@ -10,7 +10,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: '**',
+    path: '',
     redirectTo: 'about'
   }
 ];

@@ -24,10 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .set($(".carousel-item"), {
       marginRight: () => +24,
       backgroundImage: (i) =>
-         "url("+ location + "/assets/img/work/carousel/" + i + ".png)",
+         "url("+ location + "assets/img/work/carousel/" + i + ".png)",
       backfaceVisibility: "hidden",
     });
-
+    // url("https://try-2.zeabur.app/#//assets/img/work/carousel/0.png")
+    // https://try-2.zeabur.app/assets/img/work/carousel/0.png
   // Set initial state of backButton
   if (ifPrevShownCard === null) {
     backButton.classList.add('disabled');
