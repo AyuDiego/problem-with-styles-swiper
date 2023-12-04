@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, ElementRef,  OnInit, ViewChild } from '@angular/core';
-import * as Parallax from 'parallax-js';
+import  Parallax from 'parallax-js';
 
 
 @Directive({
@@ -12,20 +12,22 @@ export class ParallaxItemDirective implements AfterViewInit {
 
   ngAfterViewInit() {
     const scene = this.el.nativeElement;
-    const parallaxInstance = new Parallax(scene, {
+    new Parallax(scene, {
       relativeInput: true,
-      hoverOnly: true,
-      pointerEvents: true,
+      pointerEvents: false,
       limitX: 50,
       limitY: 50,
-      scalarX: 10,
-      scalarY: 10,
+      scalarX: 1,
+      scalarY: 1,
       clipRelativeInput: true,
       calibrateX: false,
       calibrateY: false,
       originX: 0.5,
       originY: 0.5,
-
+      invertX: false,
+      invertY: false,
+      frictionX: 0.1,
+      frictionY: 0.1,
     });
   }
 }

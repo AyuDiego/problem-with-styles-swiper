@@ -7,32 +7,30 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { MainPageComponent } from './modules/home/pages/main/main.page';
-import { HomeModule } from './modules/home/home.module';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';  
 import { SharedModule } from './shared/shared.module'; 
-
+import { ScriptLoaderService } from './core/services/script-loader.service';
 const SHARED_MODULES = [
   RouterModule.forRoot(appRoutes, {
     paramsInheritanceStrategy: 'always',
     onSameUrlNavigation: 'ignore',
     anchorScrolling: 'enabled',
     scrollPositionRestoration: 'enabled',
-  }),
-  SharedModule,
+  }), 
 ];
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    HomeModule,
+    HttpClientModule, 
     ...SHARED_MODULES,
-    NgbModule,
+    NgbModule, 
+    
   ],
-  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
+  providers: [ScriptLoaderService,{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],
+  exports: [SharedModule],
 })
 export class AppModule {}

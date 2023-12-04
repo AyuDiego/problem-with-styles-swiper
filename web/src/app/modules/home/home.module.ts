@@ -1,27 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { HomeRoutingModule, routes } from './home-routing.module';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { HomeComponent } from './pages/home/home.component';
+import { CommonModule } from '@angular/common'; 
+import { FormsModule } from '@angular/forms';
+import { WorkComponent } from './components/work/work.component';
 import { AboutComponent } from './components/about/about.component';
-import { RouterModule } from '@angular/router';
-import { WorkModule } from './components/work/work.module';
-import { AboutModule } from './components/about/about.module';
-import { SkillsModule } from './components/skills/skills.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home-page/home-page.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { HomeRoutingModule } from './home-routing.module';
 
-const SHARED_MODULES = [
-  HomeRoutingModule,
-  WorkModule,
-  AboutModule,
-  SkillsModule,
-  SharedModule,
-];
 
 @NgModule({
-  declarations: [HomeComponent],
-  imports: [CommonModule,ReactiveFormsModule, RouterModule.forChild(routes), ...SHARED_MODULES],
-  exports: [HomeComponent, ReactiveFormsModule, SharedModule],
+  declarations: [
+    HomeComponent,
+    WorkComponent,
+    AboutComponent
+
+  ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    HomeRoutingModule,
+    FormsModule
+  ]
 })
-export class HomeModule {}
+export class HomeModule { }

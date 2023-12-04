@@ -46,6 +46,13 @@ export class NavBarComponent implements OnInit {
     }
   }
   async ngOnInit(): Promise<void> {}
+  
+  scrollToElementWork(): void {
+    const work = this.document.querySelector('#work');
+    if (work) {
+      work.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
 
 

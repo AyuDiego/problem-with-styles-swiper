@@ -1,17 +1,14 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
+import { MainPageComponent } from './modules/main/pages/main/main-page.component';
 
 export const appRoutes: Routes = [
   {
     path: '',
+    component: MainPageComponent,
     loadChildren: () =>
-      import('./modules/home/home.module').then((m) => m.HomeModule),
-  },
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full',
-  }, 
+      import('./modules/main/main.module').then((m) => m.MainModule),
+  }
 ];
 
 const routerOptions: ExtraOptions = {

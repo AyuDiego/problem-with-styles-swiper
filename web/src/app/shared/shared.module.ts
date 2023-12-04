@@ -29,7 +29,7 @@ const PRIME_NG_MODULES = [
 
 @NgModule({
   declarations: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective],
-  exports: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent],
+  exports: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, RouterModule],
   imports: [
 // HttpClientModule,
     CommonModule,

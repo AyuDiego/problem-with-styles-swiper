@@ -17,7 +17,7 @@
     <p class="main-panel--text">Programming<br>and Design<br>of the FUTURE</p>
 
 
-    <button class="btn p-relative" type="button" (click)="onButtonClick()">
+    <button class="btn p-relative" type="button"   [routerLinkActive]="'active'" [routerLink]="['/']" fragment="about">
       <strong>ABOUT ME</strong>
       <div id="container-stars">
         <div id="stars"></div>
