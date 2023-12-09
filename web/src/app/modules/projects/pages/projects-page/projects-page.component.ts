@@ -13,14 +13,14 @@ export class ProjectsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
   this.kiesraadId = 'kiesraad';
     
-    this.route.fragment.subscribe((fragment: string | null) => {
-      // if (fragment == 'work' || fragment == 'kiesraad') {
-      //   this.kiesraad.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    // this.route.fragment.subscribe((fragment: string | null) => {
+    //   // if (fragment == 'work' || fragment == 'kiesraad') {
+    //   //   this.kiesraad.nativeElement.scrollIntoView({ behavior: 'smooth' });
 
-      // }
-      this.activatedUrl = fragment || '';
-      console.log(this.activatedUrl);
-    });
+    //   // }
+    //   this.activatedUrl = fragment || '';
+    //   console.log(this.activatedUrl);
+    // });
   }
   ngOnInit(): void {}
 

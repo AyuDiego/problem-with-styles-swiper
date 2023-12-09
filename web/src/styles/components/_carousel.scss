@@ -12,6 +12,7 @@
   align-items: center;
   gap: 5px;
   transition: 0.5s;
+ 
 }
 
 .carousel-item {
@@ -115,6 +116,8 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .cards>div {
@@ -126,18 +129,37 @@ h1 {
   display: none;
 }
 
-.cards>div:hover::before {
+
+
+ 
+.cards> .carousel-item.animationBackground:hover{
+  background-size: cover ;
+  opacity: 1;
+  transition: background-size 0.5s, opacity 0.5s, filter 0.5s;
+  filter: brightness(70%); 
+  transform: scale(1.1);
+  overflow: hidden;
+  margin-right: 48px !important;
+}
+
+.hideContent{ 
+  display: none ;
+  background-size: 100% 100%;
+  opacity: 0;
+  transition: background-size 0.5s, opacity 0.5s;
+}
+
+.showContent{ 
+  display: block ;
   position: relative;
   top: 30%;
-  left: 20%;
-  content: "Example text";
+  left: 20%; 
   color: black;
   font-size: 20px;
   transition: 0.5s;
+  transition-property: opacity;
   display: block;
   font-family: "Courier New", Courier, monospace;
 }
-
-.cards>div:hover {
-  margin-bottom: 20px;
-}
+/* Add specific styles for your content div inside the cards */
+ 

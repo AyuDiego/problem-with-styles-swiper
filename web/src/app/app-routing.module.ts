@@ -11,12 +11,16 @@ export const appRoutes: Routes = [
       import('./modules/main/main.module').then((m) => m.MainModule),
   },
   {
-    path: 'projects',
+    path: 'project',
     component: ProjectsComponent,
     loadChildren: () =>
       import('./modules/projects/projects.module').then((m) => m.ProjectsModule),
   },
-
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  }
 ];
 
 const routerOptions: ExtraOptions = {

@@ -8,17 +8,24 @@
 
       <div class="card-selector">
         <ul class="card-container">
-          <li class="cards shownCard">
+          <li class="cards shownCard" (mouseenter)="onImgMouseover()"
+          (mouseleave)="onImgMouseout()">
+            <div id="actualCards" class="carousel-item animationBackground" >
+              <div   
+              [ngClass]="{'hideContent': isHideContent, 'showContent': !isHideContent}">
+              <div class="text-center">MAY 2023</div>
+            </div>
+            </div>
+
+          </li>
+          <li class="cards">
             <div id="actualCards" class="carousel-item">
-              <div [ngClass]="{hideContent: isHideContent}">
+              <div   >
               
                 <h2 class="text-center">MAY 2023</h2>
                  
               </div>
             </div>
-          </li>
-          <li class="cards">
-            <div id="actualCards" class="carousel-item"></div>
           </li>
           <li class="cards">
             <div id="actualCards" class="carousel-item"></div>

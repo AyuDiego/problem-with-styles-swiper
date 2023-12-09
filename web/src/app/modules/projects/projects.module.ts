@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
-import { FormsModule } from '@angular/forms';
-import { WorkComponent } from './components/work/work.component';
+import { FormsModule } from '@angular/forms'; 
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './pages/projects-page/projects-page.component';
+import { KiesraadComponent } from './components/kiesraad/kiesraad.component';
 
 const SHARED_MODULES = [
   SharedModule,  
@@ -12,11 +12,10 @@ const SHARED_MODULES = [
 ];
 @NgModule({
   declarations: [
-    ProjectsComponent,
-    WorkComponent,
-
+    ProjectsComponent, 
+    KiesraadComponent
   ],
-  imports: [CommonModule, ...SHARED_MODULES, FormsModule],
+  imports: [CommonModule, ...SHARED_MODULES],
  
 })
 export class ProjectsModule { }

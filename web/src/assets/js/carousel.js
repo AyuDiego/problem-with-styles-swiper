@@ -80,6 +80,24 @@ myCarouselFunction = function () {
     backButton.disabled = false;
     nextButton.blur();
   });
+ 
+
+divs[0].addEventListener('click', function() {
+  window.location.href = location.origin + '/project/kiesraad';
+});
+
+// divs[1].addEventListener('click', function() {
+//    $(".stage").css("backgroundColor", "#000");
+// });
+
+// divs[2].addEventListener('click', function() {
+//    $(".stage").css("backgroundColor", "#6905BBff");
+// })
+
+// divs[3].addEventListener('click', function() { 
+//    $(".stage").css("backgroundColor", "#2a9d8f");
+  
+// });
 
   //Find a color for each one of the div cards
   cards.forEach((card, index) => {

@@ -1,5 +1,4 @@
 import {
-  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   HostBinding,
@@ -13,12 +12,25 @@ import {
 })
 export class CarouselComponent implements OnInit {
   @HostBinding('class') className = 'p-0'; 
-  isHideContent = false;
-  
+  isHideContent = true;
+  divs = [];
   constructor() { 
+
   }
+
+  onImgMouseover(): void {
+    this.isHideContent = false;  }
+
+  onImgMouseout(): void {
+    this.isHideContent = true;
+  }
+
+   ngOnInit(): void {
+    this.divs = Array.from(document.querySelectorAll('#actualCards')
+    );
+    console.log(this.divs);
  
+  }
 
 
-  async ngOnInit(): Promise<void> {}
 }
