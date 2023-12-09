@@ -15,7 +15,7 @@ export class ScriptLoaderService {
 
   loadScript(name: string): Promise<any> {
     return new Promise((resolve, reject) => {
-      let script: any = document.createElement('script'); // Cambio de tipo a 'any'
+      let script: any = document.createElement('script'); 
       script.type = 'text/javascript';
       script.src = name;
 

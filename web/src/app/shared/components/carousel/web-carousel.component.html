@@ -9,7 +9,13 @@
       <div class="card-selector">
         <ul class="card-container">
           <li class="cards shownCard">
-            <div id="actualCards" class="carousel-item"></div>
+            <div id="actualCards" class="carousel-item">
+              <div [ngClass]="{hideContent: isHideContent}">
+              
+                <h2 class="text-center">MAY 2023</h2>
+                 
+              </div>
+            </div>
           </li>
           <li class="cards">
             <div id="actualCards" class="carousel-item"></div>

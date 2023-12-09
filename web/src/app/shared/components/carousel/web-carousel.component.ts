@@ -13,7 +13,8 @@ import {
 })
 export class CarouselComponent implements OnInit {
   @HostBinding('class') className = 'p-0'; 
-
+  isHideContent = false;
+  
   constructor() { 
   }
  

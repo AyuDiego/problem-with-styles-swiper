@@ -11,6 +11,15 @@ export const routes: Routes = [
     path: 'skills',
     loadChildren: () =>
       import('../skills/skills.module').then((m) => m.SkillsModule),
+  },  {
+    path: 'experience',
+    loadChildren: () =>
+      import('../exp/exp.module').then((m) => m.ExpModule),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('../contact/contact.module').then((m) => m.ContactModule),
   },
   {
     path: '**',
