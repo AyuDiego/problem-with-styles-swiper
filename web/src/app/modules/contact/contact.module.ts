@@ -7,13 +7,13 @@ import { ContactComponent } from './pages/contact-page/contact-page.component';
   
 const ANGULAR_MODULES = [CommonModule, FormsModule];
 @NgModule({
-  declarations: [ContactComponent],
-  imports: [
-    ...ANGULAR_MODULES, 
-    HttpClientModule,
-    ContactRoutingModule,
-  ],
-  exports: [ContactComponent],
-  providers: [],
+    imports: [
+        ...ANGULAR_MODULES,
+        HttpClientModule,
+        ContactRoutingModule,
+        ContactComponent,
+    ],
+    exports: [ContactComponent],
+    providers: [],
 })
 export class ContactModule {}

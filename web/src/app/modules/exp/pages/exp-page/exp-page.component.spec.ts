@@ -9,8 +9,8 @@ describe('ExpComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ExpComponent]
-    });
+    imports: [ExpComponent]
+});
     fixture = TestBed.createComponent(ExpComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -17,20 +17,16 @@ describe('MainPanelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      declarations: [
-        MainPanelComponent,
-     
-      ],
-      imports: [
-     
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
         ButtonModule,
         ProgressSpinnerModule,
         MenuModule,
         SplitButtonModule,
-      ],
-      providers: [ HttpClient, HttpHandler],
-    }).compileComponents();
+        MainPanelComponent,
+    ],
+    providers: [HttpClient, HttpHandler],
+}).compileComponents();
 
     fixture = TestBed.createComponent(MainPanelComponent);
     component = fixture.componentInstance;

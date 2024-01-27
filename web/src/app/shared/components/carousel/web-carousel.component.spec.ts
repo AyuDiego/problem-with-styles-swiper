@@ -17,19 +17,16 @@ describe('CarouselComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      declarations: [
-        CarouselComponent,
-     
-      ],
-      imports: [
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
         ButtonModule,
         ProgressSpinnerModule,
         MenuModule,
         SplitButtonModule,
-      ],
-      providers: [ HttpClient, HttpHandler],
-    }).compileComponents();
+        CarouselComponent,
+    ],
+    providers: [HttpClient, HttpHandler],
+}).compileComponents();
 
     fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;

@@ -18,20 +18,16 @@ describe('NavBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      declarations: [
-        NavBarComponent,
-     
-      ],
-      imports: [
-     
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
         ButtonModule,
         ProgressSpinnerModule,
         MenuModule,
         SplitButtonModule,
-      ],
-      providers: [ HttpClient, HttpHandler],
-    }).compileComponents();
+        NavBarComponent,
+    ],
+    providers: [HttpClient, HttpHandler],
+}).compileComponents();
 
     fixture = TestBed.createComponent(NavBarComponent);
     component = fixture.componentInstance;

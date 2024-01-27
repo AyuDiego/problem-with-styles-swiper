@@ -8,13 +8,13 @@ import { ScriptLoaderService } from 'src/app/core/services/script-loader.service
   
 const ANGULAR_MODULES = [CommonModule, FormsModule];
 @NgModule({
-  declarations: [SkillsComponent],
-  imports: [
-    ...ANGULAR_MODULES, 
-    HttpClientModule,
-    SkillsRoutingModule,
-  ],
-  exports: [SkillsComponent],
-  providers: [],
+    imports: [
+        ...ANGULAR_MODULES,
+        HttpClientModule,
+        SkillsRoutingModule,
+        SkillsComponent,
+    ],
+    exports: [SkillsComponent],
+    providers: [],
 })
 export class SkillsModule {}

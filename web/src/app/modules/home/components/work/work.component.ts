@@ -6,10 +6,13 @@ import {
   OnInit,
 } from '@angular/core';
 import { ScriptLoaderService } from 'src/app/core/services/script-loader.service';
+import { CarouselComponent } from '../../../../shared/components/carousel/web-carousel.component';
 
 @Component({
-  selector: 'web-work',
-  templateUrl: './work.component.html',
+    selector: 'web-work',
+    templateUrl: './work.component.html',
+    standalone: true,
+    imports: [CarouselComponent],
 })
 export class WorkComponent implements OnInit, OnDestroy, AfterViewInit {
   @HostBinding('class') className = 'flex-container padding-top-82';

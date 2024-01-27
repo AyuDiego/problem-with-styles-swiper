@@ -1,8 +1,16 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
+import { FooterComponent } from '../../../../shared/components/footer/web-footer.component';
+import { NavBarComponent } from '../../../../shared/components/web-navbar/web-navbar.component'; 
 @Component({
-  selector: 'web-projects',
-  templateUrl: './projects-page.component.html',
+    selector: 'web-projects',
+    templateUrl: './projects-page.component.html',
+    standalone: true,
+    imports: [
+        NavBarComponent,
+        RouterOutlet,
+        FooterComponent,
+    ],
 })
 export class ProjectsComponent implements OnInit {
   @ViewChild('kiesraad') kiesraad!: ElementRef;

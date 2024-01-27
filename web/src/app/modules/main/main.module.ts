@@ -13,9 +13,8 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [MainPageComponent],
-  imports: [CommonModule, ...SHARED_MODULES],
-  exports: [  ],
+    imports: [CommonModule, ...SHARED_MODULES, MainPageComponent],
+    exports: [],
 })
 export class MainModule {}
 

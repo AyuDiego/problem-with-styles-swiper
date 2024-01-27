@@ -1,8 +1,9 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'web-kiesraad', 
-  templateUrl: './kiesraad.component.html',
+    selector: 'web-kiesraad',
+    templateUrl: './kiesraad.component.html',
+    standalone: true,
 })
 export class KiesraadComponent implements OnInit {
   @HostBinding('class') className = 'flex-container flex-container--page';

@@ -1,8 +1,9 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'web-about', 
-  templateUrl: './about.component.html',
+    selector: 'web-about',
+    templateUrl: './about.component.html',
+    standalone: true,
 })
 export class AboutComponent implements OnInit {
   @HostBinding('class') className = 'flex-container flex-container--page';

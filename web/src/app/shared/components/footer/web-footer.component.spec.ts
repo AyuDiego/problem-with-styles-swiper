@@ -17,20 +17,16 @@ describe('FooterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      schemas: [NO_ERRORS_SCHEMA],
-      declarations: [
-        FooterComponent,
-     
-      ],
-      imports: [
-     
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [
         ButtonModule,
         ProgressSpinnerModule,
         MenuModule,
         SplitButtonModule,
-      ],
-      providers: [ HttpClient, HttpHandler],
-    }).compileComponents();
+        FooterComponent,
+    ],
+    providers: [HttpClient, HttpHandler],
+}).compileComponents();
 
     fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;

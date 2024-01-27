@@ -10,8 +10,8 @@ describe('KiesraadComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [KiesraadComponent]
-    });
+    imports: [KiesraadComponent]
+});
     fixture = TestBed.createComponent(KiesraadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

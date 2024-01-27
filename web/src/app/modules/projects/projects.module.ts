@@ -11,11 +11,7 @@ const SHARED_MODULES = [
   ProjectsRoutingModule,  
 ];
 @NgModule({
-  declarations: [
-    ProjectsComponent, 
-    KiesraadComponent
-  ],
-  imports: [CommonModule, ...SHARED_MODULES],
- 
+    imports: [CommonModule, ...SHARED_MODULES, ProjectsComponent,
+        KiesraadComponent],
 })
 export class ProjectsModule { }

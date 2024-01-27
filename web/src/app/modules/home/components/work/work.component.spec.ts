@@ -9,8 +9,8 @@ describe('WorkComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WorkComponent]
-    });
+    imports: [WorkComponent]
+});
     fixture = TestBed.createComponent(WorkComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

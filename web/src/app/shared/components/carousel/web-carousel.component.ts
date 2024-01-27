@@ -4,11 +4,14 @@ import {
   HostBinding,
   OnInit,
 } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
-  selector: 'web-carousel',
-  templateUrl: './web-carousel.component.html',
-  changeDetection: ChangeDetectionStrategy.Default,
+    selector: 'web-carousel',
+    templateUrl: './web-carousel.component.html',
+    changeDetection: ChangeDetectionStrategy.Default,
+    standalone: true,
+    imports: [NgClass],
 })
 export class CarouselComponent implements OnInit {
   @HostBinding('class') className = 'p-0'; 

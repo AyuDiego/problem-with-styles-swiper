@@ -1,8 +1,12 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'; 
+import { ActivatedRoute, Router } from '@angular/router';
+import { WorkComponent } from '../../components/work/work.component';
+import { AboutComponent } from '../../components/about/about.component'; 
 @Component({
-  selector: 'web-home',
-  templateUrl: './home-page.component.html',
+    selector: 'web-home',
+    templateUrl: './home-page.component.html',
+    standalone: true,
+    imports: [AboutComponent, WorkComponent],
 })
 export class HomeComponent implements OnInit {
   @ViewChild('about') about!: ElementRef;

@@ -28,13 +28,13 @@ const PRIME_NG_MODULES = [
 // const SHARED_MODULES = [];
 
 @NgModule({
-  declarations: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective],
-  exports: [ NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, RouterModule],
-  imports: [
-// HttpClientModule,
-    CommonModule,
-    RouterModule, 
-    ...PRIME_NG_MODULES,
-  ]
+    exports: [NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, RouterModule],
+    imports: [
+        // HttpClientModule,
+        CommonModule,
+        RouterModule,
+        ...PRIME_NG_MODULES,
+        NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective,
+    ]
 })
 export class SharedModule {}

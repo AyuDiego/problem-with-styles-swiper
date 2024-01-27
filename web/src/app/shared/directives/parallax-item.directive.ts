@@ -3,7 +3,8 @@ import  Parallax from 'parallax-js';
 
 
 @Directive({
-  selector: '[parallaxItem]',
+    selector: '[parallaxItem]',
+    standalone: true,
 })
 // export class ParallaxItemDirective {
 export class ParallaxItemDirective implements AfterViewInit {

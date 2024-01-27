@@ -7,13 +7,13 @@ import { ExpRoutingModule } from './exp-routing.module';
   
 const ANGULAR_MODULES = [CommonModule, FormsModule];
 @NgModule({
-  declarations: [ExpComponent],
-  imports: [
-    ...ANGULAR_MODULES, 
-    HttpClientModule,
-    ExpRoutingModule,
-  ],
-  exports: [ExpComponent],
-  providers: [],
+    imports: [
+        ...ANGULAR_MODULES,
+        HttpClientModule,
+        ExpRoutingModule,
+        ExpComponent,
+    ],
+    exports: [ExpComponent],
+    providers: [],
 })
 export class ExpModule {}
