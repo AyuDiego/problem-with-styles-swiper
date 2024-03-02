@@ -6,7 +6,7 @@ myCarouselFunction = function () {
   const nextButtonIcon = document.querySelector('.carousel-control-next-icon');
 
   const backButton = document.querySelector('.carousel-control-prev');
-  const backButtonIcon = document.querySelector('.carousel-control-prev-icon');
+  const backButtonIcon = document.querySelector('.carousel-control-prev');
 
   var ifPrevShownCard = document.querySelector('.shownCard')?.previousElementSibling;
   var cardSize = cards[0]?.getBoundingClientRect().width;
