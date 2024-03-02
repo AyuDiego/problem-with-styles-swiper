@@ -16,7 +16,7 @@ myCarouselFunction = function () {
     .set($(".carousel-item"), {
       marginRight: () => +24,
       backgroundImage: (i) =>
-        "url(" + location.origin + "/assets/img/work/carousel/" + i + ".png)",
+        "url(" + location.origin + "/assets/img/work/carousel/" + i + ".webp)",
       backfaceVisibility: "hidden",
     });
 

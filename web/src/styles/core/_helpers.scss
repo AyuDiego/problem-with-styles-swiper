@@ -89,7 +89,7 @@
 .left-container {
   &__img {
     &--about {
-      background: url("../../assets/img/fondo-main-panel-1.png") top center
+      background: url("../../assets/img/fondo-main-panel-1.webp") top center
         no-repeat;
       background-size: cover;
       display: flex;
@@ -100,7 +100,7 @@
     &--work {
       display: flex;
       justify-content: center;
-      // background: url("../../assets/img/fondo-main-panel-1.png") top center no-repeat;
+      // background: url("../../assets/img/fondo-main-panel-1.webp") top center no-repeat;
       background: black;
       background-size: cover;
       flex-direction: column;
