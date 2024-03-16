@@ -1,9 +1,9 @@
-myCarouselFunction = function () {
+myCarouselFunction = function () { 
   const cardDeck = document.querySelector('.card-container');
   const cards = Array.from(cardDeck.children);
 
   const nextButton = document.querySelector('.carousel-control-next');
-  const nextButtonIcon = document.querySelector('.carousel-control-next-icon');
+  const nextButtonIcon = document.querySelector('.carousel-control-next');
 
   const backButton = document.querySelector('.carousel-control-prev');
   const backButtonIcon = document.querySelector('.carousel-control-prev');
@@ -99,10 +99,24 @@ divs[0].addEventListener('click', function() {
   
 // });
 
-  //Find a color for each one of the div cards
+  //Find a card size and set it to the cardDeck
   cards.forEach((card, index) => {
     card.style.left = cardSize * index + 'px';
+    // en cada card tiene un div con .carousel-item.animationBackground y quiero que añada una clase caundo haga hover
+    const carouselItems = document.querySelectorAll('.carousel-item.animationBackground');
+    carouselItems.forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        item.classList.add('transition');
+       });
+      item.addEventListener('mouseleave', function() {
+        item.classList.remove('transition');
+      });
+    });
+    
+
   });
+
+
 
   const moveToCard = (cardDeck, currentCard, targetCard) => {
     cardDeck.style.transform = 'translateX(-' + targetCard?.style.left + ')';

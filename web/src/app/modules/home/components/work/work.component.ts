@@ -19,10 +19,8 @@ export class WorkComponent implements OnInit, OnDestroy, AfterViewInit {
   @HostBinding('id') id = 'work';
   constructor(private scriptLoader: ScriptLoaderService) {}
 
-  ngAfterViewInit() {
-    this.scriptLoader.load('assets/js/carousel.js').then(() => {
-      (window as any).myCarouselFunction();
-    });
+  ngAfterViewInit() { 
+  
   }
   
   ngOnInit() {

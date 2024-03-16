@@ -32,7 +32,7 @@
              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
             "node_modules/parallax-js/dist/parallax.min.js",
             "node_modules/gsap/dist/gsap.min.js",
-            "src/assets/js/gsap.min.js" 
+            "src/assets/js/gsap.min.js"
           ],
           "allowedCommonJsDependencies": [
             "lodash",

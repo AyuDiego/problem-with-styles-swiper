@@ -1,35 +1,19 @@
 .stage,
-.carousel-item {
+.carousel-item-custom {
   width: 100%;
   height: 100%;
   /*   user-select:none; */
 }
-
-.stage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  transition: 0.5s;
  
-}
-
-.carousel-item {
-  background-repeat: no-repeat;
-  display: flex;
-}
-
 .stage {
   overflow: hidden;
   background: #000;
-} 
-
-h1 {
-  position: absolute;
-  bottom: 70%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  // gap: 24px;
+  transition: 0.5s;
 }
 
 .container-flex-carousel {
@@ -42,35 +26,32 @@ h1 {
 
   .carousel-control-next,
   .carousel-control-prev {
-    position: static;
+    position: sticky;
     background-color: $primary-700;
-    width: 50px;
+    max-width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 1px solid $neutral-0;
-    &:focus{
-    background-color: $primary-700;
-      
+    &:focus {
+      background-color: $primary-700;
     }
     &:hover {
       background-color: $primary-700;
     }
-    
-
 
     .carousel-control-next-icon,
     .carousel-control-prev-icon {
       background-color: $primary-700;
       border-radius: 50%;
       padding: 3px;
-
+      width: 3rem;
       &:hover {
         // background-color:  ;
       }
     }
 
-    &.disabled {
-      opacity: .5;
+    &[disabled]{
+      opacity: 0.5;
       cursor: not-allowed;
 
       .carousel-control-next-icon,
@@ -83,77 +64,179 @@ h1 {
       }
     }
   }
-}
 
+  .carousel-control-next {
+    right: 5%;
 
-.card-selector {
-  margin: 0 auto;
-  padding: 0;
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
 
-  ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-    width: 500px;
-    height: 500px;
-    transition: 0.8s;
+      .carousel-control-next-icon {
+        pointer-events: none;
+      }
+    }
+  }
+  .carousel-control-prev {
+    left: 5%;
+    
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      .carousel-control-next-icon {
+        pointer-events: none;
+      }
+    }
   }
 }
 
 .card-container {
   position: relative;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   top: 0;
   bottom: 0;
-  width: 500px;
-  height: 500px;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   cursor: pointer;
-}
-
-.cards>div {
-  transition: 0.4s;
-  background-size: cover;
-}
-
-.cards>div::before {
-  display: none;
-}
-
-
-
+  width: clamp(18rem, 42vmin, 26rem);
+  height: 500px;
+  object-fit: cover; 
+  backface-visibility: hidden;
+  transform: translateZ(0) rotate3d(0, 0, 1, 0.01deg); // add a tiny 3D rotation
+  -webkit-transform:translateZ(0) rotate3d(0, 0, 1, 0.01deg);
+  border-radius: 0.375rem;
+  & > a {
+    transition: 0.4s;
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    > .carousel-item-custom {
+      background-repeat: no-repeat;
+      display: flex;
+      transform-origin: center;
+      &.animationBackground {
+        position: relative;
+        overflow: hidden;
  
-.cards> .carousel-item.animationBackground:hover{
-  background-size: cover ;
-  opacity: 1;
-  transition: background-size 0.5s, opacity 0.5s, filter 0.5s;
-  filter: brightness(70%); 
-  transform: scale(1.1);
-  overflow: hidden;
-  margin-right: 48px !important;
+      }
+    }
+
+    & > img {
+      // width:  500px;
+      width: clamp(18rem, 42vmin, 26rem);
+      aspect-ratio: 2 / 3;
+      height: 500px;
+      object-fit: cover;
+      transition: 0.5s;
+      background-size: cover; 
+      overflow: hidden;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+    }
+
+    // &.carousel-item-custom-link {
+    //   border-color: #fffef94d; 
+    //   width: 100%;
+    //   height: 100%;
+    //   display: block;
+    // }
+
+    &:hover > .carousel-item-custom.animationBackground {
+      background-size: cover;
+      opacity: 1; 
+      transform: scale(1.1) rotate3d(0, 0, 1, 0.01deg); // add a tiny 3D rotation
+      -webkit-transform: scale(1.1) rotate3d(0, 0, 1, 0.01deg); 
+      transition: transform 0.3s;
+    }
+    &::before > .carousel-item-custom.animationBackground {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit;
+      transition: transform 0.3s;
+      transition-property: opacity;
+      transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    &:hover::before > .carousel-item-custom.animationBackground {
+      width: clamp(18rem, 42vmin, 26rem);
+      height: 500px;
+      object-fit: cover;
+      background-size: cover;
+      background-image: inherit;
+      
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .overlay-text:hover {
+    opacity: 1;
+  }
 }
 
-.hideContent{ 
-  display: none ;
+.card-selector {
+  margin: 0 ;
+  padding: 0;
+  overflow: visible;
+
+  // ul {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   padding: 0;
+  //   margin: 0;
+  //   list-style-type: none;
+  //   width: clamp(18rem, 42vmin, 26rem);
+  //   height: 500px;
+  //   transition: 0.8s;
+  // }
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: clamp(18rem, 42vmin, 26rem);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.hideContent {
+  display: none;
   background-size: 100% 100%;
   opacity: 0;
   transition: background-size 0.5s, opacity 0.5s;
 }
 
-.showContent{ 
-  display: block ;
+.showContent {
+  display: block;
   position: relative;
   top: 30%;
-  left: 20%; 
+  left: 20%;
   color: black;
   font-size: 20px;
   transition: 0.5s;
@@ -161,5 +244,3 @@ h1 {
   display: block;
   font-family: "Courier New", Courier, monospace;
 }
-/* Add specific styles for your content div inside the cards */
- 

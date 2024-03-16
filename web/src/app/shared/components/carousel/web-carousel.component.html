@@ -1,48 +1,29 @@
- 
-  <div class="stage p-5">
-    <div class="container-flex container-flex-carousel">
+<div class="stage p-5">
+  <div class="container-flex container-flex-carousel">
 
-      <button class="carousel-control-prev " >
-        <span class="carousel-control-prev-icon"></span>
-      </button>
+    <button #backButton (click)="onPrevClick()" class="carousel-control-prev ">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
 
-      <div class="card-selector">
-        <ul class="card-container">
-          <li class="cards shownCard" (mouseenter)="onImgMouseover()"
+    <div class="card-selector">
+      <div #cardDeck class="card-container"> 
+        @for (imageUrl of imageUrls; track $index) { 
+          <div class="cards " (mouseenter)="onImgMouseover()"
           (mouseleave)="onImgMouseout()">
-            <div id="actualCards" class="carousel-item animationBackground" >
-              <div   
-              [ngClass]="{'hideContent': isHideContent, 'showContent': !isHideContent}">
-              <div class="text-center">MAY 2023</div>
-            </div>
-            </div>
+          <!-- <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" > -->
 
-          </li>
-          <li class="cards">
-            <div id="actualCards" class="carousel-item">
-              <div   >
-              
-                <h2 class="text-center">MAY 2023</h2>
-                 
-              </div>
-            </div>
-          </li>
-          <li class="cards">
-            <div id="actualCards" class="carousel-item"></div>
-          </li>
-          <li class="cards">
-            <div id="actualCards" class="carousel-item">
-            </div>
-          </li>
-        </ul>
+          <a class="carousel-item-custom-link" >
+            <img [src]="imageUrl" alt="Image {{ $index }}"  class="carousel-item-custom animationBackground" [style.object-position]="objectPositionPercentage + '% center'"/>
+            <div class="overlay-text">MAYY</div> 
+          </a>
+          </div>
+        }
+
       </div>
-
-      <!-- Carousel controls -->
-      <button class="carousel-control-next"  >
+    </div>
+       <button #nextButton (click)="onNextClick()" class="carousel-control-next">
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-    
-  </div>  
-  
- 
+
+  </div>
