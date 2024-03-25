@@ -1,16 +1,20 @@
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ElementRef,
   HostBinding,
   OnDestroy,
   OnInit,
+  Renderer2,
   ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import gsap from 'gsap';
+import { ScrollableDirective } from '../../directives/scrollable.directive';
+
 
 @Component({
   selector: 'web-carousel',
@@ -18,7 +22,7 @@ import gsap from 'gsap';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, ScrollableDirective],
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class') className = 'p-0';
@@ -47,20 +51,49 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   ];
   currentImageIndex = 0;
 
-  constructor() {
+  cardSize!: number;
+
+  slider!: HTMLElement;
+  slide!: number;
+
+  sizes!: {
+    slider: string;
+    card: number;
+    thresholds: {
+      previous: number;
+      next: number;
+    }
+  } 
+
+  source =  this.imageUrls;
+
+  constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) {
     this.cards = [];
   }
 
   ngOnInit(): void {
     console.log(this.imageUrls);
+    this.sizes = {
+      slider: `${this.cards.length * 100}%`,
+      card: this.cardSize ,
+      thresholds: {
+        previous: 0.1,
+        next: 0.6
+      }
+    };
+    
   }
 
   ngAfterViewInit(): void {
     this.cards = Array.from(
       this.cardDeck.nativeElement.querySelectorAll('.cards')
     );
+    this.cardSize = this.cards[0]?.getBoundingClientRect().width;
+    console.log("🚀 ~ CarouselComponent ~ ngAfterViewInit ~ this.cardSize:", this.cardSize)
+
     this.setupCarousel();
     this.setMiddleCard();
+    this.cdr.detectChanges();
   }
 
   setMiddleCard(): void {
@@ -89,12 +122,14 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
         const marginPerCard = 24;
 
         this.cards.forEach((card, index) => {
-          let cardSize = this.cards[index]?.getBoundingClientRect().width;
+           this.slide = 0;
+  
+          console.log("🚀 ~ CarouselComponent ~ this.cards.forEach ~ sizes:", this.sizes)
           if (index === 0) {
-            card.style.left = `calc(50% - (${cardSize}px / 2 ) )`;
+            card.style.left = `calc(50% - (${this.cardSize }px / 2 ) )`;
             card.style.marginRight = `${marginPerCard}px`;
           } else {
-            card.style.left = `calc(50% - (${cardSize}px / 2)  )`;
+            card.style.left = `calc(50% - (${this.cardSize }px / 2)  )`;
             card.style.marginRight = `${marginPerCard}px`;
           }
         });
@@ -111,6 +146,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     const newIndex = this.cards.indexOf(targetCard);
 
     this.currentImageIndex = newIndex;
+    console.log("🚀 ~ CarouselComponent ~ moveToCard ~  this.currentImageIndex:",  this.currentImageIndex)
 
     const currentCardRect = currentCard.getBoundingClientRect();
     const targetCardRect = targetCard.getBoundingClientRect();
@@ -135,6 +171,27 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     this.updateButtonState();
   }
 
+  onSliderPanMove(event: any) { 
+     const startPoint = this.slide * this.sizes.card * -1;
+     const slider = document.getElementById('slider'); 
+     this.currentImageIndex = event;
+     const marginPerCard = 24;
+    const currentCard = this.cards[this.currentImageIndex];
+ 
+
+  
+
+ 
+    currentCard?.classList.remove('shownCard'); 
+     if (slider) {
+      slider.style.transform = `translateX(${ event.deltaX + marginPerCard}px)`;
+      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ slider.style.transform:", slider.style.transform)
+      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ marginPerCard:", marginPerCard)
+      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ event.deltaX:", event.deltaX)
+      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ startPoint:", startPoint)
+    }
+  }
+
   updateButtonState(): void {
     this.backButton.nativeElement.disabled = this.currentImageIndex === 0;
     this.nextButton.nativeElement.disabled =
@@ -143,6 +200,7 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onPrevClick(): void {
     if (this.currentImageIndex > 0 && !this.isAnimating) {
+      console.log("🚀 ~ CarouselComponent ~ onPrevClick ~ this.currentImageIndex :", this.currentImageIndex )
       const currentCard = this.cards[this.currentImageIndex];
       const targetCard = this.cards[this.currentImageIndex - 1];
       this.moveToCard(currentCard, targetCard);
@@ -178,4 +236,55 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {}
+
+
+ 
+
+  // onSliderPanEnd(event: any) {
+  //   console.log("🚀 ~ CarouselComponent ~ onSliderPanEnd ~ event:", event)
+  //   const target = this.fetchPanEndSlideTarget(event);
+  //   const endPoint = target * this.sizes.card * -1;
+  //   const slider = document.getElementById('slider');
+  //   console.log("🚀 ~ CarouselComponent ~ onSliderPanEnd ~ slider:", slider)
+    
+  //   if (slider) {
+  //     this.renderer.addClass(slider, 'animating');
+  //     slider.style.transform = `translateX(${endPoint}px)`;
+  //     setTimeout(() => this.renderer.removeClass(slider, 'animating'), 300);
+  //   }
+
+  //   this.slide = target;
+  // }
+  
+  //   fetchPanEndSlideTarget(event: any) {
+  //   console.log("🚀 ~ CarouselComponent ~ fetchPanEndSlideTarget ~ event:", event)
+  //   const offset = this.slide * this.sizes.card * -1;
+  //   const currentTranslation = offset + event.deltaX;
+  //   const currentSlideAsFloat=  Math.abs(currentTranslation / this.sizes.card);
+  //   const currentSlide = Math.floor(currentSlideAsFloat);
+
+  //   let delta = currentSlideAsFloat - currentSlide;
+  //   let target = currentSlide;
+
+  //   if (delta > this.sizes.thresholds.next) {
+  //     target += 1;
+  //   } else if (delta < this.sizes.thresholds.prev) {
+  //     target -= 1
+  //   }
+
+  //   // If we are at page 0 and the target would go to -1 we'll reset it to 0
+  //   if (target < 0 || currentTranslation > 0) {
+  //     target = 0
+  //   }
+
+  //   // If the user wants to scroll over the last slide we'll reset it
+  //   if (target >= this.source.length) {
+  //     target = this.source.length - 1;
+  //   }
+  //   console.log("🚀 ~ CarouselComponent ~ fetchPanEndSlideTarget ~ target:", target)
+
+  //   return target;
+  // }
+
+  
 }

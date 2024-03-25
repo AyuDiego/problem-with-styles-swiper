@@ -13,7 +13,9 @@ import { MainPanelComponent } from './components/main-panel/web-main-panel.compo
 import { ParallaxItemDirective } from './directives/parallax-item.directive';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FooterComponent } from './components/footer/web-footer.component';
-import { CarouselComponent } from './components/carousel/web-carousel.component';
+import { CarouselComponent } from './components/carousel/web-carousel.component'; 
+import { ScrollableDirective } from './directives/scrollable.directive';
+import { CarouselGrabSlideComponent } from './components/carousel-grab-slide/web-carousel-grab-slide.component';
  
 
 const PRIME_NG_MODULES = [
@@ -28,13 +30,13 @@ const PRIME_NG_MODULES = [
 // const SHARED_MODULES = [];
 
 @NgModule({
-    exports: [NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, RouterModule],
+    exports: [NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, CarouselGrabSlideComponent, RouterModule],
     imports: [
         // HttpClientModule,
         CommonModule,
         RouterModule,
-        ...PRIME_NG_MODULES,
-        NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective,
+        ...PRIME_NG_MODULES,  
+        NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent,CarouselGrabSlideComponent, ParallaxItemDirective,
     ]
 })
 export class SharedModule {}
