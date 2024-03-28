@@ -11,11 +11,9 @@ import { TooltipModule } from 'primeng/tooltip';
 import { NavBarComponent } from './components/web-navbar/web-navbar.component';
 import { MainPanelComponent } from './components/main-panel/web-main-panel.component';
 import { ParallaxItemDirective } from './directives/parallax-item.directive';
-import { HttpClientModule } from '@angular/common/http'; 
+
 import { FooterComponent } from './components/footer/web-footer.component';
-import { CarouselComponent } from './components/carousel/web-carousel.component'; 
-import { ScrollableDirective } from './directives/scrollable.directive';
-import { CarouselGrabSlideComponent } from './components/carousel-grab-slide/web-carousel-grab-slide.component';
+import { CarouselComponent } from './components/carousel/web-carousel.component';  
  
 
 const PRIME_NG_MODULES = [
@@ -30,13 +28,13 @@ const PRIME_NG_MODULES = [
 // const SHARED_MODULES = [];
 
 @NgModule({
-    exports: [NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, CarouselGrabSlideComponent, RouterModule],
+    exports: [NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent,  RouterModule],
     imports: [
         // HttpClientModule,
         CommonModule,
         RouterModule,
         ...PRIME_NG_MODULES,  
-        NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent,CarouselGrabSlideComponent, ParallaxItemDirective,
+        NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective,
     ]
 })
 export class SharedModule {}

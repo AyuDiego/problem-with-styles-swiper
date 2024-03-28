@@ -9,11 +9,7 @@
       <div #cardDeck class="card-container"> 
         <div
           id="slider"
-          class="col-4 d-flex"
-          [scrollable-duration]="300"
-          [scrollable-slide-size]="cardSize"
-          [scrollable-source]="source"
-          [scrollable-thresholds]="sizes.thresholds"
+          class="col-4 d-flex" 
           scrollable 
           (scrollEnd)="onSliderPanMove($event)" 
         >

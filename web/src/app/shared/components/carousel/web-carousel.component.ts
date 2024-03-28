@@ -13,8 +13,7 @@ import {
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import gsap from 'gsap';
-import { ScrollableDirective } from '../../directives/scrollable.directive';
-
+ 
 
 @Component({
   selector: 'web-carousel',
@@ -22,7 +21,7 @@ import { ScrollableDirective } from '../../directives/scrollable.directive';
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
-  imports: [NgClass, ScrollableDirective],
+  imports: [NgClass   ],
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class') className = 'p-0';
