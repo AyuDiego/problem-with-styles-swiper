@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import {  CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { RouterOutlet } from '@angular/router';   
+ 
+import { register } from 'swiper/element/bundle'; 
+import { CommonModule } from '@angular/common';
+register();
+
 @Component({
     selector: 'app-root',
-    templateUrl: './app.component.html',
     standalone: true,
-    imports: [RouterOutlet],
+    templateUrl: './app.component.html',
+    imports: [CommonModule, RouterOutlet],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {  
   constructor( ) { 

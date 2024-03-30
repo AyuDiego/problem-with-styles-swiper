@@ -1,6 +1,52 @@
-<div class="stage p-5">
-  <div class="container-flex container-flex-carousel">
+<div class="stage  py-8">
 
+ 
+    <swiper-container    
+    class="mySwiper" 
+     > 
+        @for (imageUrl of imageUrls; track $index) { 
+        <swiper-slide  class="swiper-slide" >
+          <div class="people__card" (mouseenter)="onImgMouseover($index)" (mouseleave)="onImgMouseout($index)">
+            <img [src]="imageUrl+ '?w=3840&fit=max&auto=format'" alt="Image {{ $index }}" class="people__card__image" 
+            srcset="" />
+            @if(!isHideContent[$index] ) {
+            <div  class="people__card__content">
+              <div class="slide__number">01</div>
+              <div class="slide__title">G.I. Joe: Retaliation</div>
+              <div class="slide__subtitle">
+                The G.I. Joes are not only fighting their mortal enemy Cobra;
+                they are forced to contend with threats from within the
+                government that jeopardize their very existence.
+              </div>
+              <a href="" class="slide__btn">
+                <span class="slide__btn__text">Watch Now</span>
+                <span class="slide__btn__icon">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 17 21"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.22218 15.2222C2.79261 15.6518 2.79261 16.3482 3.22218 16.7778C3.65176 17.2074 4.34824 17.2074 4.77782 16.7778L3.22218 15.2222ZM16.1 5C16.1 4.39249 15.6075 3.9 15 3.9L5.1 3.9C4.49249 3.9 4 4.39249 4 5C4 5.60751 4.49249 6.1 5.1 6.1L13.9 6.1L13.9 14.9C13.9 15.5075 14.3925 16 15 16C15.6075 16 16.1 15.5075 16.1 14.9L16.1 5ZM4.77782 16.7778L15.7778 5.77782L14.2222 4.22218L3.22218 15.2222L4.77782 16.7778Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <div class="slide__gradient"></div>
+          }
+          </div>
+        </swiper-slide>
+
+      } 
+    </swiper-container>  
+  
+</div>
+
+<!-- 
     <button #backButton (click)="onPrevClick()" class="carousel-control-prev ">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -15,8 +61,7 @@
         >
         @for (imageUrl of imageUrls; track $index) { 
           <div class="cards " (mouseenter)="onImgMouseover()"
-          (mouseleave)="onImgMouseout()">
-          <!-- <a [routerLink]="['/routePath']" routerLinkActive="router-link-active" > -->
+          (mouseleave)="onImgMouseout()"> 
 
           <a class="carousel-item-custom-link" >
             <img [src]="imageUrl" alt="Image {{ $index }}"  class="carousel-item-custom animationBackground" [style.object-position]="objectPositionPercentage + '% center'"/>
@@ -29,8 +74,4 @@
     </div>
        <button #nextButton (click)="onNextClick()" class="carousel-control-next">
         <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-
-  </div>
- 
+      </button> -->

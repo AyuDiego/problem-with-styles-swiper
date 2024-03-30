@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -8,35 +9,27 @@ import {
   OnDestroy,
   OnInit,
   Renderer2,
-  ViewChild,
   ViewEncapsulation,
+  signal,
+  viewChildren,
 } from '@angular/core';
-import { NgClass } from '@angular/common';
-import gsap from 'gsap';
- 
+import { CommonModule } from '@angular/common';
+// import function to register Swiper custom elements
+import { SwiperContainer, register } from 'swiper/element/bundle';
+import { SwiperOptions } from 'swiper/types';
 
 @Component({
   selector: 'web-carousel',
-  templateUrl: './web-carousel.component.html',
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
-  imports: [NgClass   ],
+  templateUrl: './web-carousel.component.html',
+  imports: [CommonModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
   @HostBinding('class') className = 'p-0';
-  @ViewChild('cardDeck', { static: true })
-  cardDeck!: ElementRef;
-  @ViewChild('nextButton', { static: true })
-  nextButton!: ElementRef;
-  @ViewChild('backButton', { static: true })
-  backButton!: ElementRef;
-  cards: HTMLElement[] = [];
-  divs: HTMLElement[] = [];
-  middlePosition!: number;
-  isHideContent = true;
-  isAnimating = false;
-  objectPositionPercentage = 50;
+  divEls = viewChildren<ElementRef>('el');
+  isHideContent: boolean[] = [];
   imageUrls: string[] = [
     location.origin + '/assets/img/work/carousel/0.webp',
     location.origin + '/assets/img/work/carousel/1.webp',
@@ -48,242 +41,94 @@ export class CarouselComponent implements OnInit, AfterViewInit, OnDestroy {
     location.origin + '/assets/img/work/carousel/0.webp',
     location.origin + '/assets/img/work/carousel/1.webp',
   ];
-  currentImageIndex = 0;
+  source = this.imageUrls;
 
-  cardSize!: number;
-
-  slider!: HTMLElement;
-  slide!: number;
-
-  sizes!: {
-    slider: string;
-    card: number;
-    thresholds: {
-      previous: number;
-      next: number;
-    }
-  } 
-
-  source =  this.imageUrls;
+  swiperElement: SwiperContainer | null = null;
+  paginationCustom: any;
 
   constructor(private renderer: Renderer2, private cdr: ChangeDetectorRef) {
-    this.cards = [];
+    this.isHideContent = new Array(this.imageUrls.length).fill(true);
   }
 
   ngOnInit(): void {
-    console.log(this.imageUrls);
-    this.sizes = {
-      slider: `${this.cards.length * 100}%`,
-      card: this.cardSize ,
-      thresholds: {
-        previous: 0.1,
-        next: 0.6
-      }
+    const swiperElementConstructor = document.querySelector('swiper-container');
+    const params: SwiperOptions = {
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      grabCursor: true,
+      freeMode: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        320: { slidesPerView: 'auto', spaceBetween: 24 },
+        500: { slidesPerView: 'auto', spaceBetween: 24 },
+        640: { slidesPerView: 'auto', spaceBetween: 24 },
+        768: { slidesPerView: 'auto', spaceBetween: 24 },
+        1024: { slidesPerView: 'auto', spaceBetween: 24 },
+        1699: { slidesPerView: 'auto', spaceBetween: 24 },
+        2560: { slidesPerView: 'auto', spaceBetween: 24 },
+      },
+      slideActiveClass: 'swiper-slide-active',
+      injectStyles: [
+        `.swiper-pagination-bottom{
+          bottom: 0 !important;
+          top: auto !important;
+          background-color: turquoise;
+        } 
+        .swiper-pagination-bullet-active {
+          color: #fff;
+          background: #007aff;
+        }   
+      `,
+      ],
+      pagination: {
+        type: 'progressbar',
+        el: 'swiper-pagination',
+        horizontalClass: 'swiper-pagination-horizontal-bottom',
+        renderProgressbar(progressbarFillClass) {
+          return `<span class="${progressbarFillClass}"></span>`;
+        },
+      },
     };
-    
-  }
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .swiper-pagination-bottom{
+      bottom: 0 !important;
+      top: auto !important;
+      background-color: turquoise;
+    } 
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }  
+    `;
+    // Append the style element to the shadow root of the Swiper element
+ 
+      if (swiperElementConstructor && swiperElementConstructor.shadowRoot) {
+        swiperElementConstructor.shadowRoot.appendChild(style);
+      }
 
-  ngAfterViewInit(): void {
-    this.cards = Array.from(
-      this.cardDeck.nativeElement.querySelectorAll('.cards')
-    );
-    this.cardSize = this.cards[0]?.getBoundingClientRect().width;
-    console.log("🚀 ~ CarouselComponent ~ ngAfterViewInit ~ this.cardSize:", this.cardSize)
+      Object.assign(swiperElementConstructor!, params);
 
-    this.setupCarousel();
-    this.setMiddleCard();
+    this.swiperElement = swiperElementConstructor as SwiperContainer;
+    this.swiperElement?.initialize();
     this.cdr.detectChanges();
   }
 
-  setMiddleCard(): void {
-    const cardContainer = this.cardDeck.nativeElement;
-    const cardContainerRect = cardContainer?.getBoundingClientRect();
-    const middlePosition = cardContainerRect.left + cardContainerRect.width / 2;
-
-    let middleCard: HTMLElement | null = null;
-    let minDistance = Infinity;
-    for (const card of this.cards) {
-      const cardRect = card.getBoundingClientRect();
-      const cardMiddlePosition = cardRect.left + cardRect.width / 2;
-      const distance = Math.abs(cardMiddlePosition - middlePosition);
-      if (distance < minDistance) {
-        minDistance = distance;
-        middleCard = card;
-      }
-    }
-
-    middleCard?.classList.add('shownCard');
+  ngAfterViewInit(): void {
+    register();
   }
 
-  setupCarousel(): void {
-    if (this.cards.length > 0) {
-      setTimeout(() => {
-        const marginPerCard = 24;
-
-        this.cards.forEach((card, index) => {
-           this.slide = 0;
-  
-          console.log("🚀 ~ CarouselComponent ~ this.cards.forEach ~ sizes:", this.sizes)
-          if (index === 0) {
-            card.style.left = `calc(50% - (${this.cardSize }px / 2 ) )`;
-            card.style.marginRight = `${marginPerCard}px`;
-          } else {
-            card.style.left = `calc(50% - (${this.cardSize }px / 2)  )`;
-            card.style.marginRight = `${marginPerCard}px`;
-          }
-        });
-        this.updateButtonState();
-      }, 0);
-    }
+  onImgMouseover(index: number): void {
+    this.isHideContent[index] = false;
   }
 
-  moveToCard(currentCard: HTMLElement, targetCard: HTMLElement): void {
-    if (!currentCard || !targetCard) {
-      console.error('currentCard or targetCard is undefined');
-      return;
-    }
-    const newIndex = this.cards.indexOf(targetCard);
-
-    this.currentImageIndex = newIndex;
-    console.log("🚀 ~ CarouselComponent ~ moveToCard ~  this.currentImageIndex:",  this.currentImageIndex)
-
-    const currentCardRect = currentCard.getBoundingClientRect();
-    const targetCardRect = targetCard.getBoundingClientRect();
-
-    this.isAnimating = true;
-
-    this.cards.forEach((card) => {
-      const cardDistance = targetCardRect.left - currentCardRect.left;
-      gsap.to(card, {
-        x: `-=${cardDistance}`,
-        duration: 0.3,
-        ease: 'power1.out',
-        onComplete: () => {
-          this.updateButtonState();
-          this.isAnimating = false;
-        },
-      });
-    });
-
-    currentCard?.classList.remove('shownCard');
-    targetCard?.classList.add('shownCard');
-    this.updateButtonState();
+  onImgMouseout(index: number): void {
+    this.isHideContent[index] = true;
   }
-
-  onSliderPanMove(event: any) { 
-     const startPoint = this.slide * this.sizes.card * -1;
-     const slider = document.getElementById('slider'); 
-     this.currentImageIndex = event;
-     const marginPerCard = 24;
-    const currentCard = this.cards[this.currentImageIndex];
- 
-
-  
-
- 
-    currentCard?.classList.remove('shownCard'); 
-     if (slider) {
-      slider.style.transform = `translateX(${ event.deltaX + marginPerCard}px)`;
-      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ slider.style.transform:", slider.style.transform)
-      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ marginPerCard:", marginPerCard)
-      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ event.deltaX:", event.deltaX)
-      console.log("🚀 ~ CarouselComponent ~ onSliderPanMove ~ startPoint:", startPoint)
-    }
-  }
-
-  updateButtonState(): void {
-    this.backButton.nativeElement.disabled = this.currentImageIndex === 0;
-    this.nextButton.nativeElement.disabled =
-      this.currentImageIndex === this.cards.length - 1;
-  }
-
-  onPrevClick(): void {
-    if (this.currentImageIndex > 0 && !this.isAnimating) {
-      console.log("🚀 ~ CarouselComponent ~ onPrevClick ~ this.currentImageIndex :", this.currentImageIndex )
-      const currentCard = this.cards[this.currentImageIndex];
-      const targetCard = this.cards[this.currentImageIndex - 1];
-      this.moveToCard(currentCard, targetCard);
-      this.updateButtonState();
-
-      this.objectPositionPercentage -= 10;
-      if (this.objectPositionPercentage < 0) {
-        this.objectPositionPercentage = 0;
-      }
-    }
-  }
-
-  onNextClick(): void {
-    if (this.currentImageIndex < this.cards.length - 1 && !this.isAnimating) {
-      const currentCard = this.cards[this.currentImageIndex];
-      const targetCard = this.cards[this.currentImageIndex + 1];
-      this.moveToCard(currentCard, targetCard);
-      this.updateButtonState();
-
-      this.objectPositionPercentage += 10;
-      if (this.objectPositionPercentage > 100) {
-        this.objectPositionPercentage = 100;
-      }
-    }
-  }
-
-  onImgMouseover(): void {
-    this.isHideContent = false;
-  }
-
-  onImgMouseout(): void {
-    this.isHideContent = true;
-  }
-
   ngOnDestroy(): void {}
-
-
- 
-
-  // onSliderPanEnd(event: any) {
-  //   console.log("🚀 ~ CarouselComponent ~ onSliderPanEnd ~ event:", event)
-  //   const target = this.fetchPanEndSlideTarget(event);
-  //   const endPoint = target * this.sizes.card * -1;
-  //   const slider = document.getElementById('slider');
-  //   console.log("🚀 ~ CarouselComponent ~ onSliderPanEnd ~ slider:", slider)
-    
-  //   if (slider) {
-  //     this.renderer.addClass(slider, 'animating');
-  //     slider.style.transform = `translateX(${endPoint}px)`;
-  //     setTimeout(() => this.renderer.removeClass(slider, 'animating'), 300);
-  //   }
-
-  //   this.slide = target;
-  // }
-  
-  //   fetchPanEndSlideTarget(event: any) {
-  //   console.log("🚀 ~ CarouselComponent ~ fetchPanEndSlideTarget ~ event:", event)
-  //   const offset = this.slide * this.sizes.card * -1;
-  //   const currentTranslation = offset + event.deltaX;
-  //   const currentSlideAsFloat=  Math.abs(currentTranslation / this.sizes.card);
-  //   const currentSlide = Math.floor(currentSlideAsFloat);
-
-  //   let delta = currentSlideAsFloat - currentSlide;
-  //   let target = currentSlide;
-
-  //   if (delta > this.sizes.thresholds.next) {
-  //     target += 1;
-  //   } else if (delta < this.sizes.thresholds.prev) {
-  //     target -= 1
-  //   }
-
-  //   // If we are at page 0 and the target would go to -1 we'll reset it to 0
-  //   if (target < 0 || currentTranslation > 0) {
-  //     target = 0
-  //   }
-
-  //   // If the user wants to scroll over the last slide we'll reset it
-  //   if (target >= this.source.length) {
-  //     target = this.source.length - 1;
-  //   }
-  //   console.log("🚀 ~ CarouselComponent ~ fetchPanEndSlideTarget ~ target:", target)
-
-  //   return target;
-  // }
-
-  
 }

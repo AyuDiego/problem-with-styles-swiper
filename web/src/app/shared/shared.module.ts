@@ -35,6 +35,6 @@ const PRIME_NG_MODULES = [
         RouterModule,
         ...PRIME_NG_MODULES,  
         NavBarComponent, MainPanelComponent, FooterComponent, CarouselComponent, ParallaxItemDirective,
-    ]
+    ] 
 })
 export class SharedModule {}
