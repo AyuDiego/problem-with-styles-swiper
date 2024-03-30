@@ -1,0 +1,221 @@
+
+.main-panel {
+  &-overflow {
+    position: sticky;
+  }
+
+  &--text {
+    text-align: center;
+    font-family: $font-family-root-heavy;
+    font-size: 6rem;
+    font-weight: 600;
+    line-height: 116px;
+    /* 120.833% */
+    letter-spacing: -1.44px;
+    color: #dafffb;
+    text-shadow: 0px 8px 4px #000000;
+  }
+}
+.parallax-container {
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  height: 100svh;
+  min-height: 100vh;
+  position: sticky;
+  background-attachment: fixed;
+  inset: 0;
+
+  &--flex {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 56px;
+    inset: 0;
+    bottom: calc(50% - 8vh);
+    position: absolute;
+    
+  }
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+  box-shadow: 10px 23px 250px 41px #000 inset;
+}
+.background-stars {
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  background: url("../../../assets/img/fondo_arriba_sin_estrellas.webp")
+    no-repeat 50% 100%;
+  box-shadow: 10px 23px 250px 41px #000 inset;
+  background-size: cover;
+  background-attachment: fixed;
+  backface-visibility: hidden;
+  z-index: -50;
+  
+  .layer-2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    background: url("../../../assets/img/fondo_abajo.webp") no-repeat 50% 100%;
+    background-size: cover;
+
+    background-attachment: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 10;
+  }
+  .layer-3 {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    left: -10% !important;
+    top: -10% !important;
+  }
+}
+
+@function multiple-box-shadow($n) {
+  $value: "#{random(4000)}px #{random(4000)}px #FFF";
+  @for $i from 2 through $n {
+    $value: "#{$value} , #{random(4000)}px #{random(4000)}px #FFF";
+  }
+  @return unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(800);
+$shadows-medium: multiple-box-shadow(600);
+$shadows-big: multiple-box-shadow(500);
+$shadows-biggest: multiple-box-shadow(400);
+
+@keyframes animStarPanel-1 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animStarPanel-2 {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.25;
+  }
+}
+
+#stars-1 {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStarPanel-1 3s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small; 
+    border-radius: 50%;
+  }
+}
+
+#stars-2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStarPanel-2 3s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    border-radius: 50%;
+  }
+}
+
+#stars-3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStarPanel-1 5s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+    border-radius: 50%;
+  }
+}
+
+#stars-4 {
+  width: 4px;
+  height: 4px;
+  background: transparent;
+  box-shadow: $shadows-biggest;
+  animation: animStarPanel-2 4s cubic-bezier(0.44, 0.35, 0, 0.25) infinite;
+  border-radius: 50%;
+  text-shadow: #dafffb;
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 1000px;
+    width: 4px;
+    height: 4px;
+    background: transparent;
+    box-shadow: $shadows-biggest;
+    border-radius: 50%;
+    text-shadow: #dafffb;
+  }
+}
+
+//responsive moverlo a una pagina scsss a parte 
+
+@media only screen and (min-width: 2560px) {
+  .parallax-container--flex {
+    bottom: 50%;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  .parallax-container--flex {
+    bottom: 50%;
+  }
+}

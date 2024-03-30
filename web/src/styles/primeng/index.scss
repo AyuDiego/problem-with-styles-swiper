@@ -1,0 +1,35 @@
+// PrimeNG global styles
+@import "primeng/resources/primeng.min.css";
+@import "primeng/resources/themes/lara-light-purple/theme.css"; 
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+//PrimeNG custom components styles
+@import "button";
+@import "galleria"; 
+
+
+// PrimeNG components
+// @import "button";
+// @import "results-portal";
+// @import "data-entry";
+// @import "data-display";
+// @import "paginator";
+// @import "table";
+// @import "tab-menu";
+// @import "dialog";
+// @import "navigation";
+// @import "messages";
+// @import "misc";
+// @import "spinner";
+
+//PrimeNG font-family
+// body,
+// body .p-component
+// {
+//   font-family: Assistant, sans-serif;
+// }
+// "styles": [
+//     "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+//     "node_modules/primeng/resources/themes/lara-light-purple/theme.css",
+//     "node_modules/primeng/resources/primeng.min.css", 

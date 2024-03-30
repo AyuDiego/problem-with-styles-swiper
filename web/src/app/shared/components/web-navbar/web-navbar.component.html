@@ -1,0 +1,61 @@
+<nav class="navbar   navbar-expand-lg p-0">
+
+
+  <div class="container-fluid container-navigation " [ngClass]="isNavbarFixed?'container-navigation--fixed':'container-navigation--scroll'" 
+  (scroll) = "onWindowScroll()">
+  
+    <a class="navbar-brand navbar-brand--text d-lg-none" [routerLink]="['/']">AYU</a>
+    
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarScroll"  >
+      
+      <ul class="navbar-nav mx-auto d-flex align-items-center" style="--bs-scroll-height: 100px">
+        <a class="navbar-brand navbar-brand--text d-none d-lg-block"  [routerLink]="['/']">AYU</a>
+        <div class="navbar-brand--v-line"></div>
+        
+        <li class="nav-item">
+          <a class="nav-link active" [routerLinkActive]="'active'" [routerLink]="['/']" fragment="work">
+            Work
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLinkActive]="'active'" [routerLink]="['/']" fragment="about">
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" [routerLinkActive]="'active'" [routerLink]="['/skills']" fragment="skills">
+            My skills
+          </a>
+        </li>       <li class="nav-item">
+          <a class="nav-link active" [routerLinkActive]="'active'" [routerLink]="['/experience']" fragment="experience">
+            Experience/Education
+          </a>
+        </li>       <li class="nav-item">
+          <a class="nav-link active" [routerLinkActive]="'active'" [routerLink]="['/contact']" fragment="contact">
+            Contact
+          </a>
+        </li>
+        <li class="nav-item">
+          <!-- <div class="justify-content-center order-1 footer-social-media">
+            <a href="/" target="_blank" class="mx-2">
+              <img class="media-icon" src="../../../../assets/img/social-media/github.svg" alt="Github link" />
+            </a>
+            <a href="/" target="_blank" class="mx-2">
+              <img class="media-icon" src="../../../../assets/img/social-media/linkedin.svg" alt="linkedin link" />
+            </a>
+            <a href="/" target="_blank" class="mx-2">
+              <img class="media-icon" src="../../../../assets/img/social-media/behance.svg" alt="behance link" />
+            </a>
+          </div> -->
+        </li>   
+      </ul>
+    </div>
+  </div>
+</nav>
+ 

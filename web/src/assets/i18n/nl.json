@@ -1,0 +1,681 @@
+{
+  "pg-ui": {
+    "routes": {
+      "election": {
+        "title": "NL - Select an Election",
+        "selectArea": "NL - Select Area",
+        "subtitleGroup": "NL - Choose an election group from the list below.",
+        "subtitle": "NL - In this group there are {{ election }} elections available. Please select the Area and the election then click the button below to set up your Political Group inside the election.",
+        "subtitleOne": "NL - There is one election available. Please select the election and click the button below to access the election and set up your Political Group.",
+        "activeElections": "NL - Active elections: {{ totalElections }}",
+        "electionType": "NL - {{ electionType }}",
+        "electionTypeName": "NL - {{ electionTypeName }}",
+        "id": "NL - ID: {{ totalId }}",
+        "seats": "NL - Seats: {{ totalSeat }}",
+        "electionDate": "NL - Day of voting: {{ totalElectionDate }}",
+        "votingDate": "NL - Day of voting",
+        "submitDay": "NL - Last submit day",
+        "role": "NL - Role: {{ totalRole }}",
+        "lastSubmit": "NL - Last submit day:",
+        "area": "NL - Area:"
+      },
+      "addressBook": {
+        "BSN": "Burger Service Nummer (BSN)",
+        "addPerson": "toevoegen persoon",
+        "addressBook": "adresboek",
+        "addressBookExportFormat": "adresboek",
+        "affix": "tussenvoegsel",
+        "callSign": "roepnaam",
+        "callSignDisplayed": "roepnaam in documenten",
+        "city": "woonplaats",
+        "cityLabel": "woonplaats",
+        "columnsToExport": "kolommen voor exporteren *",
+        "correspondencePersonalAddress": "privé correspondentie adres",
+        "country": "land",
+        "countryLabel": "land",
+        "countryOfResidence": "land",
+        "dateOfBirth": "geboortedatum",
+        "declarationOfSettle": "verklaring van voorgenomen vestiging",
+        "deleteEverywhere": "ja, verwijder overal",
+        "deleteOnly": "ja, verwijder alleen hier",
+        "displayCallSign": "toon roepnaam in documenten",
+        "displayGender": "toon geslacht in documenten",
+        "email": "Email",
+        "emptyListMessage1": "er zijn geen personen in het adresboek",
+        "emptyListMessage2": "gebruik onderstaande knop om een persoon toe te voegen aan het adresboek",
+        "exportFormat": "export formaat *",
+        "exportHeader": "NL - Export person in Address Book",
+        "fullName": "volledige naam",
+        "gender": "geslacht",
+        "genderDisplayed": "geslacht in documenten",
+        "initials": "voorletters",
+        "itemsSelected": "{{value}} items geselecteerd",
+        "lastName": "achternaam",
+        "municipality": "gemeente",
+        "municipalityLabel": "gemeente",
+        "noKeepIt": "nee, behouden",
+        "numberOfPersons": "personen ({{value}})",
+        "personalAddressEnabled": "gebruik algemene correspondentieadres",
+        "personalData": "persoonlijke gegevens",
+        "phoneNumber": "mobiel nummer",
+        "placeOfResidence": "woonplaats",
+        "removeEntryMsg": "weet u zeker dat u dit wilt verwijderen?",
+        "removeSelectionMsg": "weet u zeker dat u dit wilt verwijderen?",
+        "streetAndHouseNumber": "straat en huisnummer",
+        "streetAndHouseNumberLabel": "straat en huisnummer",
+        "useCorrespondenceAddressParty": "gebruik algemene correspondentieadres *",
+        "zipCode": "postcode",
+        "zipCodeLabel": "postcodee"
+      }
+    }
+  },
+  "pg": {
+    "routes": {
+      "common": {
+        "order": "NL - List Position",
+        "error": "NL - Error",
+        "continue": "NL - Continue",
+        "start": "NL - Start",
+        "standalone": "geregistreerde aanduiding",
+        "coalition": "samengevoegde aanduiding",
+        "blanklist": "blancolijst",
+        "remove": "NL - Remove",
+        "add": "toevoegen",
+        "all": "alle",
+        "selected": "NL - selected",
+        "cancel": "annuleren",
+        "csv": ".csv",
+        "delete": "verwijderen",
+        "edit": "bewerken",
+        "election": "gemeenteraadsverkiezingen",
+        "listSubmitters": "NL - List Submitters",
+        "confirm": "NL - Confirm List",
+        "export": "exporteren",
+        "gender": "geslacht",
+        "import": "importeren",
+        "no": "nee",
+        "noResultsFound": "geen resultaten gevonden",
+        "ods": ".ods",
+        "paginatorMessage": "toont {first} tot {last} van {totalRecords}",
+        "save": "opslaan",
+        "search": "zoeken",
+        "select": "selecteer",
+        "title": "politieke groeperingen",
+        "type": "type",
+        "update": "update",
+        "upload": "upload",
+        "xlsx": ".xlsx",
+        "yes": "ja",
+        "confirmButton": "NL - Confirm",
+        "ok": "NL - Ok",
+        "success": "NL - Success",
+        "warning": "NL - Warning"
+      },
+      "pg-cu-standalone-route": {
+        "title": "politieke groepering",
+        "description": "(gegevens voor document H3-1)",
+        "gcaTitle": "correspondentie adres",
+        "gcaDescription": "beschrijving hier"
+      },
+      "pg-cu-coalition-route": {
+        "title": "definitie van de samengevoegde aanduiding",
+        "description": "(gegevens voor document H3-2)",
+        "gcaTitle": "correspondentie adres",
+        "gcaDescription": "beschrijving hier"
+      },
+      "pg-cu-blanklist-route": {
+        "gcaTitle": "correspondentie adres",
+        "gcaDescription": "beschrijving hier"
+      },
+      "pg-route": {
+        "title": "Deelnemende fractie",
+        "titleExplanation": "Basisgegevens van de lijst",
+        "explanation": "Om de lijst aan te maken hoeft u alleen de basisinformatie van de politieke groepering in te vullen.",
+        "titlePgConfiguration": "NL - Political group configuration",
+        "description": "details politieke groepering",
+        "typeOfFrame": "type lijst *",
+        "tabStandaloneDescription": "op zichzelf staande geregistreerde aanduiding",
+        "tabCoalitionDescription": "combinatie van meerdere geregistreerde aanduidingen",
+        "tabBlanklistDescription": "er is geen geregistreerde aanduiding"
+      },
+      "pg-read-route": {
+        "title": "politieke groeperingen",
+        "titleExplanation": "details politieke groepering",
+        "typeOfFrame": "type lijst",
+        "regDesignation": "geregistreerde aanduiding",
+        "fullStatName": "Nvolledige statutaire naam",
+        "mandate": "machtiging politieke groepering",
+        "designation": "aanduiding",
+        "coalitionName": "naam van de samengevoegde aanduiding",
+        "partyNumber": "partij nummer #",
+        "gca": "correspondentie adres"
+      }
+    },
+    "components": {
+      "pg-coalition-definition": {
+        "coalitionName": "naam van de samengevoegde aanduiding: *",
+        "partyNumber": "partij nummer #",
+        "addParty": "toevoegen nieuwe politieke groepering aan samengevoegde aanduiding",
+        "placeholderType": "type"
+      },
+      "pg-general-correspondence-address": {
+        "addressLabel": "straat en huisnummer: *",
+        "placeholderType": "type",
+        "municipalityLabel": "gemeente: *",
+        "zipCodeLabel": "postcode: *",
+        "cityLabel": "woonplaats: *",
+        "countryLabel": "land: *",
+        "mandatory": "*verplicht veld"
+      },
+      "pg-party": {
+        "regDesignationLabel": "geregistreerde aanduiding: *",
+        "kiesraadLink": "Bekijk op kiesraad.nl",
+        "fullStatNameLabel": "volledige statutaire naam: *",
+        "mandateLabel": "machtiging politieke groepering *",
+        "createMandate": "voer nieuwe machtiging politieke groepering in"
+      },
+      "pg-party-definition": {
+        "designationLabel": "aanduiding: *",
+        "placeholderType": "type"
+      },
+      "pg-party-dialog": {
+        "headerTitle": "voer andere machtiging politieke groepering in",
+        "headerText": "de ingevoerde gegevens worden opgeslagen in het adresboek",
+        "affixLabel": "tussenvoegsel: ",
+        "placeholderType": "type",
+        "lastNameLabel": "achternaam: *",
+        "initialsLabel": "voorletters: *",
+        "callSignLabel": "roepnaam: ",
+        "emailLabel": "Email: *",
+        "phoneNumberLabel": "mobiel nummer: *"
+      }
+    }
+  },
+  "election": {
+    "routes": {
+      "overview": {
+        "textEmpty1": "NL - You don't have any election started.",
+        "textEmpty2": "NL - Please select one election from the available election group in order to start setting  up your Political Group.",
+        "title": "NL - Overview Elections",
+        "text-center": "NL - Hello, your PG team is currently working on these elections:",
+        "selectElection": "NL - Select an Election"
+      }
+    },
+    "common": {
+      "messages": {
+        "completed": "NL -Completed",
+        "inProgress": "NL - In progress",
+        "open": "NL - Open"
+      }
+    }
+  },
+  "lists": {
+    "routes": {
+      "lists-any-list-candidates-cu-route": {
+        "explanation": "nl - In order to add a new candidate to the list it please complete the form about their information.",
+        "updateExplanation": "NL - Please complete the form about their information.",
+        "listPositionTitle": "nl - List position",
+        "listPositionDescription": "nl - Description here",
+        "listPositionLabel": "nl - Position number on the list: *",
+        "personalDataTitle": "nl - Personal data",
+        "personalDataDescription": "nl - Description here",
+        "Ballot preview": "nl - Ballot preview",
+        "affixLabel": "nl - Affix:",
+        "lastNameLabel": "nl - Last Name: *",
+        "initialsLabel": "nl - Initials: *",
+        "callSignLabel": "nl - Call sign:",
+        "callSignCheckBox": "nl - Display call sign in documents",
+        "citizenServiceNumberLabel": "nl - Citizen Service Number (BSN):",
+        "dateOfBirthLabel": "nl - Date of birth: *",
+        "genderLabel": "nl - Gender: ",
+        "genderCheckBox": "nl - Display gender in documents",
+        "placeOfResidenceLabel": "nl - Place of residence: *",
+        "municipalityOfResidenceLabel": "nl - Municipality of residence: *",
+        "countryOfResidenceLabel": "nl - Country of residence: *",
+        "correspondanceAddressTitle": "nl - Personal correspondence address",
+        "correspondanceAddressDescription": "nl - Description here",
+        "useCorrespondenceAddressParty": "nl - Use general correspondence address of Party: *",
+        "documentationTitle": "nl - Documentation",
+        "documentationDescription": "nl - Description here",
+        "statementNotToStandAsCandidate": "nl - Add statement not to stand as a candidate in another member state:",
+        "downloadStatementNotToStandAsCandidate": "nl - Download template (Y13)",
+        "declarationOfNonExclusion": "nl - Add Declaration that you are not excluded from the right to stand for election in your home Member State/Declaration of non-exclusion from the right to stand for election in your home Member State",
+        "downloadDeclarationOfNonExclusion": "nl - Download template (Y35)",
+        "declarationOfSettleTitle": "nl - Declaration of settle",
+        "declarationOfSettleDescription": "nl - Description here",
+        "useDeclarationOfSettle": "nl - Add Declaration of Intent to Establish:",
+        "downloadTemplateSettle": "nl - Download template settle",
+        "candidatesMandate": "nl - Candidate's Mandate",
+        "candidatesMandateDescription": "nl - You need to fill the info of an authorized representative because the residence of this candidate is set outside the European part of Netherlands.",
+        "countryMandateWarningDescription": "NL - The Candidate's Mandate will be deleted but not in the Address Book"
+      },
+      "uniqueListRoute": {
+        "finalizeList": "NL - Finalize List",
+        "revertFinalizeList": "NL - Revert finalized list",
+        "overPanel": "NL - Are you sure you want to revert the final list?",
+        "overPanelSubmitter": "NL - You need to complete list submitter before finalizing the list.",
+        "overPanelList": "NL - You need to solve lists errors before finalizing the list.",
+        "overPanelCandidateList": "NL - You need at least some candidate."
+      }
+    },
+    "components": {
+      "lists-address-book-dialog": {
+        "addPerson": "NL - Add Selected Persons",
+        "title": "NL - Select a person from your address book",
+        "limitExceed": "Maximaal van aantal kandidaten ({{ limitExceed }}) per lijst is bereikt."
+      },
+      "list-template": {
+        "home": "  NL - Back Home",
+        "lists": "NL - Lists",
+        "list-candidates-create": "NL - Add new candidate",
+        "list-candidates-read": "NL - Lists"
+      },
+      "lists-form-substitutes": {
+        "explanation": "nl - Use the form below to fill information about the second substitute for recovery from absenteeism.",
+        "personalDataTitle": "nl - Personal data",
+        "personalDataDescription": "nl - Description here",
+        "initialsLabel": "nl - Initials: *",
+        "callSignLabel": "nl - Call sign:",
+        "affixLabel": "nl - Affix:",
+        "lastNameLabel": "nl - Last Name: *",
+        "genderLabel": "nl - Gender:",
+        "addressDataTitle": "nl - Address",
+        "addressDataDescription": "nl - Description here",
+        "placeOfResidenceLabel": "nl - Place of residence: *",
+        "municipalityOfResidenceLabel": "nl - Municipality of residence: *",
+        "countryOfResidenceLabel": "nl - Country of residence: *",
+        "correspondanceAddressTitle": "nl - Personal correspondence address",
+        "correspondanceAddressDescription": "nl - Description here",
+        "useCorrespondenceAddressParty": "nl - Use general correspondence address of Party: *"
+      },
+      "listCandidatesRead": {
+        "removeMultipleCandidate": "NL - By deleting this list you will remove all the candidates and costituencies assigned.",
+        "emptyTextMultiCostiFirst": "NL - The political party will submit one single list to the constituency {{ constituencyName }} for this election",
+        "emptyTextMultiCostiSecond": "NL - In case you want to continue please press one of the buttons below so to start adding candidates to the list",
+        "emptyTextOneCosti": "NL - Please press of the buttons below in order to start adding candidates to your list.",
+        "personExist": "NL - Maybe the candidate already exists, please check the fields: gender, last name, place of residence and date of birth.",
+        "checkboxLabel": "NL - Show only candidates with warnings and errors",
+        "candidatesWithWarnings": "NL - candidates with warnings",
+        "candidatesWithErrors": "NL - candidates with errors"
+      },
+      "listSubstitutesRead": {
+        "emptyListSubmitterTitle": "Nl - No submitter added.",
+        "emptyListSubmitterDescription": "NL - In order to add one ore more substitutes you need first to add a list submitter.",
+        "name": "NL - Name",
+        "gender": "NL - Gender",
+        "placeOfResidence": "NL - Place of residence",
+        "country": "NL - Country",
+        "pca": "NL - Personal Correspondance Address",
+        "addSubstitute": "Add substitute"
+      },
+      "finalize-lists-dialog": {
+        "header": "NL - Finalise your lists",
+        "finalizing": "NL - By finalizing, you declare your lists of candidates complete.",
+        "changesWarning": "NL - You can then no longer make changes unless you revert the list.",
+        "finalDocuments": "NL - After this process the lists won't be submitted to the corresponding central electoral commitee yet. To do so you have to go inside section \"Final Documents\"."
+      }
+    },
+    "common": {
+      "messages": {
+        "lists": "NL - Lists",
+        "candidates": "NL - Candidates",
+        "listSubmitter": "NL - List Submitter",
+        "subtitutes": "NL - Subtitutes",
+        "listEmpty": "NL - Your list is empty",
+        "addCandidate": "NL - Add Candidate",
+        "selectFromAddressBook": "NL - Select from Address Book",
+        "cancelRevert": "NL - No, keep it",
+        "revert": "NL - Yes, revert it"
+      }
+    },
+    "modules": {
+      "list-submitter": {
+        "edit": "NL -List submitter details",
+        "pdTitle": "NL -Personal Data",
+        "gdDescription": "NL -(description here)",
+        "addressTitle": "NL -Address",
+        "pcaTitle": "NL -Personal correspondence address",
+        "name": "NL -Name",
+        "gender": "NL -Gender: ",
+        "placeOfResidence": "NL -Place of residence",
+        "countryOfResidence": "NL - Country of residence: *",
+        "country": "NL -Country",
+        "pca": "NL -Personal Correspondance Address",
+        "municipality": "NL -Municipality",
+        "explanation": "Gebruik het onderstaande formulier om informatie in te vullen over de lijstindiener die verantwoordelijk is voor het presenteren van de lijst",
+        "initials": "NL -Initials: *",
+        "callSign": "NL -Call Sign:",
+        "affix": "NL -Affix:",
+        "lastName": "NL -Last Name: *",
+        "correspondanceAddressTitle": "NL -Use general correspondence address of party: *"
+      },
+      "list-substitutes": {
+        "emptySubmitter": "NL - You need to create a Submitter first",
+        "navigate-submitter": "NL - Add submitter"
+      }
+    }
+  },
+  "candidates": {
+    "routes": {
+      "candidates-cu-route": {
+        "explanation": "vul gegevens in om de vereiste info over lijsten en documenten voor de geselecteerde verkiezing toe te voegen.",
+        "listsTitle": "lijst configuratie",
+        "listsDescription": "beschrijving hier",
+        "listsSeatsLabel": "heeft 16 oif meer zetels bij laatste verkiezing",
+        "documentsTitle": "configuatie documenten",
+        "documentsDescription": "beschrijving hier",
+        "documentsGenderLabel": "geslacht in alle documenten toevoegen",
+        "documentsCallSignLabel": "roepnaam in alle documenten toevoegen",
+        "sixteenSeatsAdvice": "NL - By saving this option you are limiting the number of candidates to 50 instead of 80 you can present in a list. All the candidates that stand out will be removed automatically.",
+        "mandatory": "*verplicht veld"
+      },
+      "candidates-read-route": {
+        "title": "kandidaten",
+        "titleExplanation": "details van de configuratie",
+        "listsSeatsTitle": "16 of meer zetels bij laatste verkiezing",
+        "documentsGenderTitle": "vermeld geslacht in documenten",
+        "documentsCallSignTitle": "vermeld roepnaam in documenten"
+      }
+    }
+  },
+  "final-docs": {
+    "routes": {
+      "annexes-route": {
+        "annexesDeclaration": "NL - I declare I will include the following annex(es) together with the list of candidates (tick as appropriate):",
+        "includeModelH3": "NL - A statement from the authorised representative(s) of the political group(s) authorising me to to place the designation above the list of candidates, because I have placed a designation above the list placed (model H 3-1 or H 3-2).",
+        "includeModelH4": "NL - Statements from voters that they support the list, as the list does not qualify for the exemption from this requirement (model H 4).",
+        "includeModelH9": "NL - A declaration by each candidate appearing on the list that he agrees to sentence his candidature on the list (model H 9).",
+        "copy": "NL - A copy of a valid identity document of each candidate who does not sit on the body for which the election is held.",
+        "includeModelH12": "NL - Proof of payment of the deposit, as the list does not qualify for the waiver of this obligation (model H 12).",
+        "declarationOfIntendedResidence": "NL - A declaration of intended residence of any candidate appearing on the list who is not resident in the area to which the election relates (only in the case of an election of provincial councils, the general board of and water board, a municipal council and the island councils of the public bodies of Bonaire, Saba or Sint Eustatius)."
+      },
+      "overview-route": {
+        "systemWarnings": "NL - The system has found {{ numberOfWarning }} warning(s) in the list of candidates you are going to present to this election:",
+        "reviewWarning": "NL - A substantive review will takes place only after the central electoral committee has received the written list of candidates together with the final documents. Please take into account that if you continue, there may be (mandatory) data missing from your list of candidates that could lead to an omission.",
+        "correctListWarning": "NL - If you want to make corrections click the link below so to enter again the list. Remember to first revert the list, make your changes and finalize the list again.",
+        "candidatesWarning": "NL - Candidate {{ selectedName }} at list position {{ selectedCandidatePosition }}: {{ selectedReason }}"
+      },
+      "welcome-route": {
+        "welcomeTitle": "NL - Welcome to the final section for generating the final documentation",
+        "welcomeIntro": "NL - You have completed all the other sections and you are able to generate the final documents to be presented by the list submitter.",
+        "startSteps": "NL - Click start in order to access the process."
+      },
+      "generate-route": {
+        "fillFormFields": "NL - Fill in the form fields to add the info required about lists and documents to present for the selected election.",
+        "modelH1": "NL - Model H1",
+        "language": "NL - Language",
+        "generateInFrisian": "NL - Generate all documents and templates in Frisian: *",
+        "declarationOfConsent": "NL - Declaration of consent",
+        "declarationOfConsentH9": "NL - Declaration of consent (H 9) : *",
+        "prepareOnlyOneDocument": "NL - Prepare only one document",
+        "prepareSeparateDocuments": "NL - Prepare separate documents for each candidate",
+        "processMayBeSlow": "NL - Depending on the number of candidates, this process may take some time.",
+        "generateModel": "NL - Generate Model H1",
+        "previous": "NL - Previous",
+        "theseWillBeGenerated": "NL - These is the file that will be generated",
+        "theseWillBeAttached": "NL - These are the annexes that will be attached",
+        "modelH1PDF": "NL - Model-h1.pdf",
+        "model": "NL - Model",
+        "generating": "NL - Generating."
+      },
+      "finalize-route": {
+        "stepsFinalized": "You have finalize all the steps",
+        "whenSigning": " When signing your list of candidates, make sure that the same date an time is printed at the bottom of the form pages. This means that each form belongs to the same set, which will also be checked by the central electoral committee.",
+        "makeSure": "Make sure the various documents are correctly signed.",
+        "submittingParty": "List of candidates (H1 form) by the submitting party.",
+        "authToPlace": "Authorization to place the list designation (H3-1 or H3-2 form) by the authorized representative of the political group.",
+        "declarationOfSupport": "Declaration of support (H4 form) by voter who is registered as a voter with the municipality.",
+        "declarationOfAssent": "Declaration of assent (H9 form) by candidate.",
+        "presentAllDocuments": "You have to present all the documents to the central electoral committee between xxxx and xxxx on xxxx (the day of the nomination of candidates). To avoid unnecessary waiting, it is wise to make an before handing in the required documents.",
+        "downloadModelH1": "Download Model H1",
+        "generateNewModelH1": "Generate New Model H1",
+        "byGenerating": "By generating a new Model H1 you are going to remove data of all  the previous generated documents and new Hash-code will be created  at the end of the process.",
+        "maintainCurrent": "No, maintain the current Model H1",
+        "restartProcess": "Yes, restart the process again",
+        "model": "NL - Model",
+        "declarationConsentDescription": "NL - (Description here)",
+        "mandatoryField": "NL - *This field is mandatory"
+      }
+    },
+    "common": {
+      "labels": {
+        "next": "NL - Next",
+        "cancel": "NL - Cancel",
+        "start": "NL - Start",
+        "correctionsButton": "NL - Make corrections to the list",
+        "confirmDeclaration": "NL - Confirm Declaration",
+        "step": "NL - Step",
+        "finalDocs": "NL - Final Documents",
+        "backHome": "NL - Back Home",
+        "yes": "NL - Yes",
+        "no": "NL - No"
+      }
+    }
+  },
+  "team-manager": {
+    "routes": {
+      "team-manager-cu-route": {
+        "explanation": "NL - Use the form below to fill information about new user of your team.",
+        "roleTitle": "NL - Role",
+        "roleDescription": "NL - (description here)",
+        "roleLabel": "NL - Role: *",
+        "personalDataTitle": "NL - Personal data",
+        "personalDataDescription": "NL - (description here)",
+        "initialsLabel": "NL - Initials: *",
+        "callSignLabel": "NL - Call sign: ",
+        "affixLabel": "NL - Affix:",
+        "lastNameLabel": "NL - Last name: *",
+        "emailLabel": "NL - Email: *",
+        "mobileNumberLabel": "NL - Mobile number: *",
+        "mandatory": "NL - *This field is mandatory"
+      },
+      "team-manager-read-route": {
+        "addUser": "NL - Add User"
+      }
+    },
+    "components": {
+      "empty-team": {
+        "addNewUser": "NL - Add new user",
+        "emptyPGTeamTitle": "NL - Your Political Group is empty.",
+        "emptyPGTeamText": "NL - Please add new coordinator or employee in order to create your team so they will start setting up your Political Group."
+      },
+      "list-team-table": {
+        "noUsersFound": "NL - No users found.",
+        "active": "NL - Active",
+        "pending": "NL - Pending",
+        "deactivated": "NL - Deactivated"
+      }
+    },
+    "common": {
+      "labels": {
+        "deactivate": "NL - Deactivate",
+        "resendInvitation": "NL - Resend invitation",
+        "coordinator": "NL - Coordinator",
+        "employee": "NL - Employee"
+      }
+    }
+  },
+  "omissions": {
+    "routes": {
+      "omissions-cu-route": {
+        "title": "NL - Omissions",
+        "description-title": "NL - Electoral district: {{ areaName }}",
+        "description-header": "NL - The chairman of the central electoral committee inform that the central electoral committee for the election of the members of {{ electionName }} as noted one or more omissions with the designation {{ politicalGroupDesignation }} ",
+        "downloading-error": "NL - An error occurred while downloading the file. Contact adminstrator",
+        "downloading-success": "NL - File downloaded"
+      }
+    },
+    "components": {
+      "empty-omission": {
+        "title": "NL - Your table of omissions is empty."
+      },
+      "list-team-table": {
+        "noUsersFound": "NL - No users found.",
+        "active": "NL - Active",
+        "pending": "NL - Pending",
+        "deactivated": "NL - Deactivated"
+      }
+    },
+    "common": {
+      "download": "NL - Download"
+    }
+  },
+  "shared": {
+    "common": {
+      "messages": {
+        "area": "NL - Area",
+        "warnings": "NL - Warnings",
+        "errors": "NL - There are some errors",
+        "status": "NL - Status",
+        "role": "NL - Role",
+        "users": "NL - Users"
+      }
+    },
+    "components": {
+      "pg-custom-dropdown": {
+        "placeholder": "selecteer",
+        "noResults": "geen resultaten gevonden"
+      },
+      "pg-custom-autocomplete": {
+        "placeholder": "type of selecteer",
+        "noResults": "geen resultaten gevonden",
+        "suggestion": "Invoeren {{ selectedEntity }} als een nieuwe aanduiding"
+      }
+    },
+    "basicData": {
+      "sidebar": {
+        "overview": "NL - Overview",
+        "elections": "NL - Elections",
+        "teamManagement": "NL - Team Management",
+        "candidates": "kandidaten",
+        "finalDocs": "definitieve documenten",
+        "lists": "lijsten",
+        "politicalGroups": "politieke groeperingen",
+        "title": "menu",
+        "omissions": "NL- Omissions"
+      },
+      "navbar": {
+        "h1Draft": "NL - Generate H1 draft",
+        "h1GenerateDutch": "NL - Generate in Dutch",
+        "h1GenerateFrisian": "NL - Generate in Frisian",
+        "h1GenerateButtonTooltip": "NL - Generation of H1 Draft will be available after the user includes at least one candidate in a list."
+      },
+      "formErrors": {
+        "invalidFormatDate": "ongeldig data formaat. Verwacht formaat dd-mm-jjjj",
+        "invalidInitials": "NL - Period must be placed after each initial. No space between letters or period",
+        "invalidLegalAge": "moet waarde zijn tussen 18 en 99 jaar",
+        "invalidFormatNumber": "NL - Should only have numbers",
+        "invalidDay": "NL - This day doesn't exist",
+        "minLength": "NL - Expect {{requiredLength}} but got {{actualLength}}",
+        "maxLength": "verwacht {{requiredLength}}, maar zie {{actualLength}}",
+        "requiredField": "*verplicht veld",
+        "email": "invoer voldoet niet aan E-mail patroon"
+      }
+    }
+  },
+  "sharedModules": {
+    "addressBook": {
+      "back": "NL - Back",
+      "paginatorMessage": "toont {first} tot {last} van {totalRecords}",
+      "itemsSelected": "{{value}} items geselecteerd",
+      "numberOfPersons": "personen ({{value}})",
+      "fullName": "volledige naam",
+      "delete": "verwijderen",
+      "all": "alle",
+      "callSign": "roepnaam",
+      "gender": "geslacht",
+      "placeOfResidence": "woonplaats",
+      "countryOfResidence": "land",
+      "affix": "tussenvoegsel",
+      "lastName": "achternaam",
+      "initials": "voorletters",
+      "callSignDisplayed": "roepnaam in documenten",
+      "email": "Email",
+      "phoneNumber": "mobiel nummer",
+      "BSN": "Burger Service Nummer (BSN)",
+      "dateOfBirth": "geboortedatum",
+      "genderDisplayed": "geslacht in documenten",
+      "personalAddressEnabled": "gebruik algemene correspondentieadres",
+      "streetAndHouseNumber": "straat en huisnummer",
+      "municipality": "gemeente",
+      "zipCode": "postcode",
+      "city": "woonplaats",
+      "country": "land",
+      "search": "zoeken",
+      "edit": "bewerken",
+      "noResultsFound": "geen resultaten gevonden",
+      "removeEntryMsg": "weet u zeker dat u dit wilt verwijderen?",
+      "noKeepIt": "nee, behouden",
+      "deleteEverywhere": "ja, verwijder overal",
+      "deleteOnly": "ja, verwijder alleen hier",
+      "removeSelectionMsg": "weet u zeker dat u dit wilt verwijderen?",
+      "useCorrespondenceAddressParty": "gebruik algemene correspondentieadres *",
+      "yes": "ja",
+      "no": "nee",
+      "streetAndHouseNumberLabel": "straat en huisnummer",
+      "municipalityLabel": "gemeente",
+      "select": "selecteer",
+      "zipCodeLabel": "postcodee",
+      "cityLabel": "woonplaats",
+      "countryLabel": "land",
+      "emptyListMessage1": "er zijn geen personen in het adresboek",
+      "emptyListMessage2": "gebruik onderstaande knop om een persoon toe te voegen aan het adresboek",
+      "upload": "upload",
+      "addPerson": "toevoegen persoon",
+      "exportHeader": "NL - Export person in Address Book",
+      "exportFormat": "export formaat *",
+      "csv": ".csv",
+      "ods": ".ods",
+      "xlsx": ".xlsx",
+      "columnsToExport": "kolommen voor exporteren *",
+      "cancel": "annuleren",
+      "export": "exporteren",
+      "displayCallSign": "toon roepnaam in documenten",
+      "displayGender": "toon geslacht in documenten",
+      "personalData": "persoonlijke gegevens",
+      "correspondencePersonalAddress": "privé correspondentie adres",
+      "update": "update",
+      "addressBook": "adresboek",
+      "import": "importeren",
+      "save": "opslaan",
+      "addressBookExportFormat": "adresboek",
+      "importHeader": "NL - Import person in Address book",
+      "importFormat": "NL - Please, select the file you want to import. Format file supported is .csv.",
+      "chooseFile": "NL - Upload file",
+      "chooseOtherFile": "NL - Upload other file",
+      "fileToImport": "NL - File to import",
+      "importSettings": "NL - Import settings",
+      "withoutUpdating": "NL - Add new persons without updating existing one",
+      "withUpdating": "NL - Add new persons and update existing ones",
+      "numberRowsHeading": "NL - Number of rows headings",
+      "validateAndPreview": "NL - Validate and preview",
+      "importPersonsButton": "NL - Import persons",
+      "preview": "NL - Preview",
+      "displayCall": "NL - Display call sign",
+      "displayGenderShort": "NL - Display gender",
+      "importResults": "NL - Import results",
+      "importErrors": "NL - Errors list",
+      "line": "NL - File row",
+      "personNumber": "NL - Person number",
+      "errorDescription": "NL - Error description",
+      "noErrorsFound": "NL - No errors found",
+      "updatedPersons": "NL - Updated persons",
+      "insertedPersons": "NL - Inserted persons"
+    },
+    "addressBookFormErrors": {
+      "requiredField": "*verplicht veld",
+      "invalidInitials": "NL - Period must be placed after each initial. No space between letters or period",
+      "invalidLegalAge": "moet waarde zijn tussen 18 en 99 jaar",
+      "invalidFormatDate": "ongeldig data formaat. Verwacht formaat dd-mm-jjjj",
+      "invalidDay": "NL - This day doesn't exist",
+      "email": "invoer voldoet niet aan E-mail patroon",
+      "maxLength": "verwacht {{ requiredLength }}, maar zie {{ actualLength }}",
+      "minLength": "NL - Expect {{requiredLength}} but got {{actualLength}}",
+      "pattern": "NL- This field only accepts letters and numbers"
+    },
+    "formInfo": {
+      "street": "NL - Format: Letters and numbers",
+      "zip": "NL - Format: 4 numbers and 2 letters"
+    }
+  }
+}

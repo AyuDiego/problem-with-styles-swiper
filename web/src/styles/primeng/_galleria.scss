@@ -1,0 +1,127 @@
+:is(p-galleria) .custom-galleria {
+  &.p-galleria {
+    &.fullscreen {
+      display: flex;
+      flex-direction: column;
+
+      .p-galleria-content {
+        flex-grow: 1;
+        justify-content: center;
+        background: black;
+      }
+      .format-img__gallery--logo{
+        width: 100%;
+        object-fit: contain;
+        object-position: center;
+        display: block;
+        padding: 10%;
+        max-width: 100%;
+        aspect-ratio: auto;
+      }
+    }
+
+    .p-galleria-content {
+      position: relative;
+      background: black;
+
+      :is(p-galleriaitem) {
+        .p-galleria-item-container {
+          > button {
+            background: $neutral-100;
+            &.p-link:focus {
+              box-shadow: none;
+            }
+            &.p-link {
+              :is(svg) {
+                color: $neutral-0;
+               
+              }
+            }
+          }
+        }
+      }
+
+      :is(p-galleriathumbnails) {
+        .p-galleria-thumbnail-items-container {
+          img {
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .p-galleria-thumbnail-wrapper {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .p-galleria-thumbnail-items-container {
+      width: 100%;
+    }
+
+    .custom-galleria-footer {
+      display: flex;
+      align-items: center;
+      background-color: $neutral-100;
+      color: $neutral-0;
+
+      > button {
+        background-color: transparent;
+        color: $neutral-0;
+        border: 0 none;
+        border-radius: 0;
+        margin: 0.2rem 0;
+
+        &.fullscreen-button {
+          margin-left: auto;
+        }
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+
+    .title-container {
+      > span {
+        font-size: 0.9rem;
+        padding-left: 0.829rem;
+
+        &.title {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.format-img__gallery {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  max-width: 800px;
+  aspect-ratio: 7/5;
+
+  &--fullscreen {
+  width: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    aspect-ratio: 4/2;
+  }
+  &--logo {
+    width: 800px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    max-width: 800px;
+    padding: 10%;
+    aspect-ratio: 7/5;
+  }
+}
+
+ 
+// custom-galleria p-galleria p-component p-galleria-item-nav-onhover fullscreen
